@@ -5,8 +5,8 @@
 package ejercicio4_tema3;
 import java.util.Scanner;
 /**
- *
- * @author alumno
+ * CUAL ES EL MENOR
+ * @author Daniel Iglesias
  */
 public class Ejercicio4_Tema3 {
 
@@ -25,17 +25,17 @@ public class Ejercicio4_Tema3 {
         System.out.print("Por último, introduzca un tercer número: ");
         int num3 = entrada.nextInt();
 
-        int mayor;
-
+        int manor;
+        
         // Determinar el mayor de los tres números
         if (num1 <= num2 && num1 <= num3) {
-            mayor = num1;
+            manor = num1;
         } else if (num2 <= num1 && num2 <= num3) {
-            mayor = num2;
+            manor = num2;
         } else {
-            mayor = num3;
+            manor = num3;
         }
 
-        System.out.println("El número mayor de los introducidos es el " + mayor);
+        System.out.println("El número mayor de los introducidos es el " + manor);
     }
 }

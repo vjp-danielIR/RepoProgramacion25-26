@@ -5,8 +5,8 @@
 package ejercicio7_tema3;
 import java.util.Scanner;
 /**
- *
- * @author alumno
+ *COMPROBAR SI HOY SE TRABAJA
+ * @author Daniel Iglesias
  */
 public class Ejercicio7_Tema3 {
 
@@ -18,26 +18,26 @@ public class Ejercicio7_Tema3 {
 
         System.out.print("Introduce un número del 1 al 7 correspondiente al día de la semana: ");
         int diasemana = entrada.nextInt();
+            
+        boolean laborable = false; // Inicializamos por defecto
 
-        boolean laborable;
-
-        // Fragmento que NO se puede modificar:
+    // Fragmento que NO se puede modificar
         switch (diasemana) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                laborable = true;
-                break;
-            case 6:
-            case 7:
-                laborable = false;
-                break;
-            default:
-                laborable = false;
-                break;
-        }
-    }
-    
-}
+        case 1: 
+        case 2: 
+        case 3: 
+        case 4: 
+        case 5: 
+            laborable = true;
+        break; //salgo de la parte true
+        case 6: 
+        case 7: 
+            laborable = false;
+            break; //salgo de la parte false
+                }
+            // Comprobamos si el día es laborable o no
+            if (laborable == true ) {
+            System.out.println("Hay que trabajar");
+              } else{
+            System.out.println("NO HAY TRABAJO!!");
+            }}}

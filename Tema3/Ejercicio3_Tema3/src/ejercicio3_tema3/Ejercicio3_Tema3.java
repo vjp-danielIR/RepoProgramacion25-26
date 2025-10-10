@@ -5,8 +5,8 @@
 package ejercicio3_tema3;
  import java.util.Scanner;
 /**
- *
- * @author alumno
+ *CALCULAR CUAL ES EL MAYOR
+ * @author Daniel Iglesias
  */
 public class Ejercicio3_Tema3 {
 
@@ -14,6 +14,7 @@ public class Ejercicio3_Tema3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //pido por pantalla los
      Scanner entrada = new Scanner(System.in);
         //pedir primer numero
         System.out.print("introduzca el primer número: ");
@@ -26,18 +27,18 @@ public class Ejercicio3_Tema3 {
         int num3 = entrada.nextInt();
             
         //solo necesito un  Scanner entrada por que todos los valores son del mismo tipo
-        int mayor;
-
-        // Determinar el mayor de los tres números
-        if (num1 >= num2 && num1 >= num3) {
-            mayor = num1;
-        } else if (num2 >= num1 && num2 >= num3) {
-            mayor = num2;
-        } else {
-            mayor = num3;
+       
+        int mayor = num1; 
+        // si el segundo es mayor, actualizamos
+        if (num2 >= mayor) {
+            mayor = num2; 
+        }
+          // si el tercero es mayor actualizamos
+        if (num3 >= mayor) {
+            mayor = num3; 
         }
 
         System.out.println("El número mayor de los introducidos es el " + mayor);
     }
-    
-}
+
+    }

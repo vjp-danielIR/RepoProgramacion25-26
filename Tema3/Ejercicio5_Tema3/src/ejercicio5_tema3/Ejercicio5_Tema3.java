@@ -5,8 +5,8 @@
 package ejercicio5_tema3;
 import java.util.Scanner;
 /**
- *
- * @author alumno
+ * PAR O IMPAR
+ * @author Daniel Iglesias
  */
 public class Ejercicio5_Tema3 {
 
@@ -14,11 +14,14 @@ public class Ejercicio5_Tema3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //corregido
+        //pido por pantalla y lo guardo 
          Scanner entrada = new Scanner(System.in);
 
         System.out.print("introduzca un número: ");
         int num = entrada.nextInt();
-
+        
+            //Calcula el resto de dividir num entre 2 
         if (num % 2 == 0) {
             System.out.println("El número introducido es par.");
         } else {

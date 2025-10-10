@@ -6,8 +6,8 @@ package ejercicio1_tema3;
 // importamos la clase scanner para preguntar al usuairo
     import java.util.Scanner;
 /**
- *
- * @author alumno
+ * COMPROBAR SI EL NUMERO ES POSITIVO O NO
+ * @author Daniel Iglesias
  */
 public class Ejercicio1_TEMA3 {
 
