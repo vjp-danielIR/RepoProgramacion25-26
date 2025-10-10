@@ -5,8 +5,8 @@
 package ejercicio6_tema3;
 import java.util.Scanner;
 /**
- *
- * @author alumno
+ * CALCULAR SI TU NOTA SI ESTA APROBADO O SUSPENSO
+ * @author Daniel Iglesias
  */
 public class Ejercicio6_Tema3 {
 
