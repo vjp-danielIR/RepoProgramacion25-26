@@ -14,19 +14,21 @@ public class Ejercicio14_Tema3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            //usarmos esta variable para ir sumando
-           int numero = 2; 
-       
-           // Contador de pares
-           int contador = 1;
+        int num = 0; 
+        // Contador de pares
+        int contador = 0;
 
-           // Comprobar si el contador ya lleva los 100 numeros pares
-           while (contador <= 100) {
-              System.out.println(numero);
+        do {
+            // Solo imprimimos si es par
+            if (num % 2 == 0) {
+                System.out.println(num);
+                contador++; // solo aumentamos contador si imprimimos un par
+            }
 
-            // Pasamos al siguiente número par numero +=2 es que sume 2 
-            numero +=2;
-            contador++;
-        }
+            // Pasamos al siguiente número
+            num++;
+            
+
+        } while (contador < 100); // hasta imprimir 100 números pares
     }
 }

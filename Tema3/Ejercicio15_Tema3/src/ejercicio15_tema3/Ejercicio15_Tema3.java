@@ -18,16 +18,16 @@ public class Ejercicio15_Tema3 {
         // pedimos por pantalla del numero que quiere saber la table de multiplicar
         Scanner entrada = new Scanner(System.in); 
         
-        System.out.print("Introduce un número para calcular su tabla de multiplicar: ");
+        System.out.print("Dime un número para calcular su tabla de multiplicar: ");
       
         // Se guarda la variable en numero
-        int numero = entrada.nextInt(); 
+        int num = entrada.nextInt(); 
         
-        System.out.println("Tabla de multiplicar del " + numero);
+        System.out.println("Tabla de multiplicar del " + num);
         
         // Bucle para generar la tabla del 0 al 10
         for (int i = 0; i <= 10; i++) {
-            System.out.println(numero + " x " + i + " = " + (numero * i));
+            System.out.println(num + " x " + i + " = " + (num * i));
         }
     }
 }
