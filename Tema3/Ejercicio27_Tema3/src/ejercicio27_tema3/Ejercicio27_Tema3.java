@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package Ejercicio27_Tema3;
+package ejercicio27_tema3;
+
 import java.util.Scanner;
 /**
  * hacer un menu y hacer lo que el usuario requiera de esas opciones
