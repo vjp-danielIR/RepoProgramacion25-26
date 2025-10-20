@@ -15,7 +15,13 @@ public class Ejercicio11_Tema3 {
      */
     public static void main(String[] args) {
       // Usamos un bucle for para repetir 6 veces
-        for (int i = 1; i <= 6; i++) {
+     // int loop = 1:
+     // while (loop<=6){
+       // System.out.println("hola " + loop);
+        //loop++
+               // } me gusto mas el de el 
+               //mientras que el bucle for no cumpla hasya las 6 veces cada hola tendra unn "-" y si supera los 6 imprimira un " -" 
+      for (int i = 1; i <= 6; i++) {
             // Mostramos "Hola" seguido del número
             System.out.print("Hola" + i);
             
