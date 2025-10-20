@@ -14,17 +14,18 @@ public class Ejercicio13_Tema3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         int numero = 11; // Número inicial
+         int num = 11; // Número inicial
 
         // hacemos que el bucle compruebe si x numero es par o impar si es y sumamos 
         //1 hasta que el while compare si el numero es mayor o igual que 133
-      while (numero <= 133){ // Condición para seguir el bucle
+     // Condición para seguir el bucle
+        while (num <= 133){ 
             // Comprobamos si el número es par
-            if (numero % 2 == 0) {
-                System.out.println(numero);
+            if (num % 2 == 0) {
+                System.out.println(num);
             }
             // Sumamos 1
-            numero++;
+            num++;
         } 
     }
 }
