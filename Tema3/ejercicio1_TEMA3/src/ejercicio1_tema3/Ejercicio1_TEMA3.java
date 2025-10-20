@@ -9,7 +9,7 @@ package ejercicio1_tema3;
  * COMPROBAR SI EL NUMERO ES POSITIVO O NO
  * @author Daniel Iglesias
  */
-public class Ejercicio1_TEMA3 {
+public class Ejercicio1_Tema3 {
 
     /**
      * @param args the command line arguments
@@ -28,4 +28,3 @@ public class Ejercicio1_TEMA3 {
     }
     }
     
-
