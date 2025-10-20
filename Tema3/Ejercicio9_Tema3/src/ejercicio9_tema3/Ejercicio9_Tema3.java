@@ -14,6 +14,7 @@ public class Ejercicio9_Tema3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //pedimos por pantalla
            Scanner entrada = new Scanner(System.in);
 
         System.out.print("introduzca el primer numero: ");
@@ -27,9 +28,9 @@ public class Ejercicio9_Tema3 {
 
         System.out.print("introduzca un cuarto numero: ");
         int d = entrada.nextInt();
-
+            //auxiliar
         int temp;
-
+            //comparamos 
         // Primer paso: ordenar a y b
         if (a > b) {
             temp = a; a = b; b = temp;
