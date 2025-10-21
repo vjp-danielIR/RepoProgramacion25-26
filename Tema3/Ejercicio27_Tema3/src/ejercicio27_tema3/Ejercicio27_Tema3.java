@@ -29,15 +29,15 @@ public class Ejercicio27_Tema3 {
           
        do { 
           
-           System.out.println("_______MENU_______");
-           System.out.println("1. sumar los dos numeros");
-           System.out.println("2. restar los dos numeros");
-           System.out.println("3. multiplicar los dos numeros");
-           System.out.println("4. dividir los dos numeros");
-           System.out.println("5. salir del programa");
-            opcion = entrada.nextInt();
+                 System.out.println("_______MENU_______");
+                 System.out.println("1. sumar los dos numeros");
+                 System.out.println("2. restar los dos numeros");
+                 System.out.println("3. multiplicar los dos numeros");
+                 System.out.println("4. dividir los dos numeros");
+                 System.out.println("5. salir del programa");
+                    opcion = entrada.nextInt();
         
-                switch (opcion) {
+            switch (opcion) {
                     case 1:
                         System.out.println("Resultado de la suma: " + (num1 + num2));
                         break;
@@ -55,11 +55,13 @@ public class Ejercicio27_Tema3 {
                         break;
                     default:
                            System.out.println("opcion invalida");
-                           break;
-                }
-        } while (opcion != 5);
-      }
-        catch(ArithmeticException e) {
-                            System.out.println("no puedes dividir entre 0"); 
-                               } 
-       }}
+                      
+                           }
+                 } while (opcion != 5);
+                            }
+          catch(ArithmeticException e) {
+               System.out.println("no puedes dividir entre 0"); 
+                System.out.println(e);
+                     } 
+       }
+}

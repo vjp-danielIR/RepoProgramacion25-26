@@ -29,6 +29,7 @@ public class Ejercicio22_Tema3 {
             
            System.out.println("el resultado de dividir " + num1 + " + " + num2 + " es igual a = " + (num1 + num2));
        //en caso de que el usuario quiera dividir entre 0 le saldrea este esrror 
-    } catch(java.util.InputMismatchException e) {
+    } catch(InputMismatchException e) {
             System.out.println("no puedes sumar letras solo numeros");
+            System.out.println(e);
 }}}
