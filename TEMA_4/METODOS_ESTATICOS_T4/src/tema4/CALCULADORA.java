@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CALCULADORA;
+package tema4;
+
+import tema4.utilidades.*;
 
 /**
  *metodo que devuelve la suma de dos numeros 
@@ -42,4 +44,7 @@ public class CALCULADORA {
          }
          public static int division(int num1, int num2){
         return num1 / num2;
-}}
+}
+
+          
+}

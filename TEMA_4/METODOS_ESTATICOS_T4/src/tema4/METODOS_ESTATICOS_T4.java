@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package metodos_estaticos_t4;
-
+package tema4;
+import metodos_estaticos_t4.*;
+import tema4.utilidades.pedirNumero;
 /**
  *
  * @author alumno
  */
 public class METODOS_ESTATICOS_T4 {
     //metodo que imprime un saludo tipo void
-   
     public static void saludo(){
         System.out.println("Hola universo");
     } 
