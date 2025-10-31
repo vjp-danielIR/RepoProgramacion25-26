@@ -9,13 +9,13 @@ package operaciones;
  * @author alumno
  */
 public class operacionSM {
-    public static int multiplicacion(int num1, int num2){
-        int resultado = num1 * num2;
-        return resultado;
-    
+    //si es 10 o mayor se multiplicaran aqui
+    public static int multiplicacion(int num1, int num2){//atributos
+        int resultado = num1 * num2; //guardo la multiplicacion
+        return resultado; //la devuelvo
     }
-    public static int suma(int num1, int num2){
-        int resultado= num1+num2;
-        return resultado;
+    public static int suma(int num1, int num2){//atributos
+        int resultado= num1+num2;//guardo el resultado
+        return resultado; //lo devuelvo
     }
 }

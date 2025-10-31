@@ -17,6 +17,7 @@ public class T4_Ejercicio2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //pedimos por pantalla y lo guardamos
         int resultado;
        Scanner entrada = new Scanner(System.in);
         System.out.println("Dime un numero");
@@ -24,11 +25,11 @@ public class T4_Ejercicio2 {
         System.out.println("Dime otro numero ");
         int num2 = entrada.nextInt();
         
-        
+        //comparamos si num1 es mayor que 10
         if(num1 > 10){
-           resultado = operaciones.operacionSM.multiplicacion(num1, num2);
+           resultado = operaciones.operacionSM.multiplicacion(num1, num2);//si es asi lo multiplicamos
             System.out.println(resultado);
-        
+        //si no lo es pues los sumamos
         } else {
         resultado = operaciones.operacionSM.suma(num1, num2);
             System.out.println(resultado);

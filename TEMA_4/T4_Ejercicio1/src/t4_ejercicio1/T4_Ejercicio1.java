@@ -25,7 +25,9 @@ public class T4_Ejercicio1 {
                 System.out.println("El numero es positivo");
                 }else if (num1 < 0){
                    System.out.println("El numero es negativo");
-            }
-         return 0;
+                } else {
+                      System.out.println("el numero no puede ser 0");
+                            } 
+            return 0; 
+     }
     }
-}
