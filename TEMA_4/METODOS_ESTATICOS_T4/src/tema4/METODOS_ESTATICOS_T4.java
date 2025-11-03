@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tema4;
-import metodos_estaticos_t4.*;
-import tema4.utilidades.pedirNumero;
+
 /**
  *
  * @author alumno
@@ -52,7 +51,8 @@ public class METODOS_ESTATICOS_T4 {
         //  resultado = sumaDevuelve(num1, num2);
         //  System.out.println(resultado);
         //System.out.println(sumaDevuelve(num1,num2));
-        int num1 = tema4.utilidades.pedirNumero();
+        int num1 ;
+        num1 = tema4._utilidades.pedirNumero;
         
         System.out.println(num1);
     }}

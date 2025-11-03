@@ -38,6 +38,7 @@ public class METODOS_ESTATICOS_T4 {
     
     
     
+        //Math.random()*(f+1-i)   
     /**
      * @param args the command line arguments
      */

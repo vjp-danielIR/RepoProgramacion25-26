@@ -40,8 +40,9 @@ public class CALCULADORA {
         
     }
          public static int multiplicacion(int num1, int num2){
-        return num1 * num2;
-         }
+        return 
+                }
+         
          public static int division(int num1, int num2){
         return num1 / num2;
 }
