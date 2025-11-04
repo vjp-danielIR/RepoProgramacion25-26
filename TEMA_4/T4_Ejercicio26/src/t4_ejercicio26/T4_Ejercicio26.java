@@ -23,7 +23,8 @@ public class T4_Ejercicio26 {
             System.out.println("Es primo");//si el metodo me devuelve un true se imprimira esto
         }else{
             System.out.println("No es primo");//si es false se imprime esto
-    }}
+    }
+    }
     
     public static boolean esPrimo(int num){
         //metodo que comprueba si es primo
@@ -41,4 +42,6 @@ public class T4_Ejercicio26 {
     primo = true;
     }
     } return primo;
-    }}
+
+   }
+}

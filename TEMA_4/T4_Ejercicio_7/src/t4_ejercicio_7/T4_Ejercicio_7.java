@@ -12,6 +12,7 @@ public class T4_Ejercicio_7 {
 
     /**
      * @param args the command line arguments
+     * Metodo para pedir por pantalla los 4 numeros al usuairo
      */
     public static void main(String[] args) {
      int a, b, c, d;
@@ -28,6 +29,7 @@ public class T4_Ejercicio_7 {
             
              System.out.print("Introduce un numero ");
             d = entrada.nextInt();
+            
             ordenarNum(a, b, c, d);
                
     }
@@ -35,9 +37,14 @@ public class T4_Ejercicio_7 {
     /**
      *
      * @param a
+     * @param b
+     * @param c
+     * @param d
+     * Metodo para cambiar los numeros de sitios de menor a mayor
      */
     public static void ordenarNum(int a, int b, int c, int d){ 
        int temp;
+       //bucle que compara y cambia de lugar los numeros parra ordenarlos
            while (!(a < b && a < c &&  a < d && b < c && b < d && c < d)){
         if (a > b) {
             temp = a; a = b; b = temp;

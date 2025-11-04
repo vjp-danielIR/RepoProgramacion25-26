@@ -1,59 +1,76 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package metodos_estaticos_t4;
+
+import utilidades.Utilidades;   // Importamos clase de otro paquete
+import calculadora.Calculadora; // Importamos clase Calculadora (suponiendo que está en otro paquete)
 
 /**
- *
+ * Ejemplo de uso de métodos estáticos entre clases y paquetes.
+ * 
  * @author alumno
  */
 public class METODOS_ESTATICOS_T4 {
-    //metodo que imprime un saludo tipo void
-   
-    public static void saludo(){
+
+    // Método que imprime un saludo (void)
+    public static void saludo() {
         System.out.println("Hola universo");
-    } 
-    
-//metodo que imprime un mensaje con un dato que recibe por parametro tipo void
-    public static void  saludoConParametro(int num){
-            System.out.println("Hola neox " + num);
-           // saludo();
     }
-    
-    //metodo que muestra la suma de dos numeros que recibe por parametro tipo void 
-    public static void suma(int num1, int num2){
-            System.out.println(" la suma de " + num1 + " y " + num2 + " es igual a " + (num1 + num2));
+
+    // Método que imprime un mensaje con un dato que recibe por parámetro (void)
+    public static void saludoConParametro(int num) {
+        System.out.println("Hola neox " + num);
     }
-           
-    //metodo que devuelve la suma de dos numeros que recibe por parametros tipo int
-    public static int  sumaDevuelve(int num1, int num2){
-     System.out.println(" ");
-     return num1 + num2; 
+
+    // Método que muestra la suma de dos números (void)
+    public static void suma(int num1, int num2) {
+        System.out.println("La suma de " + num1 + " y " + num2 + " es igual a " + (num1 + num2));
     }
-            
-    
-    //metodo que devuelve true si la contraseña 
-    //que pasamos por parametro es correcta tipo boolean
-    
-    
-    
-        //Math.random()*(f+1-i)   
+
+    // Método que devuelve la suma de dos números (int)
+    public static int sumaDevuelve(int num1, int num2) {
+        return num1 + num2;
+    }
+
     /**
-     * @param args the command line arguments
+     * Método principal.
+     * Aquí se prueban distintos métodos estáticos y clases externas.
      */
     public static void main(String[] args) {
-        //int num1= 3;
-        //int num2= 2;
-        // int resultado;
-        //llamamos a los metodos para que se ejecuten en el programa
-        //saludo();
-        //saludoConParametro(1);
-        //suma(num1, num2);
-        //  resultado = sumaDevuelve(num1, num2);
-        //  System.out.println(resultado);
-        //System.out.println(sumaDevuelve(num1,num2));
-        int num1 = tema4.utilidades.pedirNumero();
-        
-        System.out.println(num1);
-    }}
+        int num1, num2;
+        double resultado;
+
+        // Ejemplo: llamada a métodos propios
+        saludo();
+        saludoConParametro(7);
+        suma(5, 10);
+        System.out.println("Resultado de la sumaDevuelve: " + sumaDevuelve(5, 10));
+
+        // Ejemplo: llamada a métodos estáticos de otra clase
+        // (asumiendo que Calculadora tiene métodos estáticos suma, resta, etc.)
+        num1 = Utilidades.pedirNumero();
+        num2 = Utilidades.pedirNumero();
+
+        try {
+            resultado = Calculadora.suma(num1, num2);
+            System.out.println(num1 + " + " + num2 + " = " + resultado);
+
+            resultado = Calculadora.resta(num1, num2);
+            System.out.println(num1 + " - " + num2 + " = " + resultado);
+
+            resultado = Calculadora.multiplicacion(num1, num2);
+            System.out.println(num1 + " * " + num2 + " = " + resultado);
+
+            resultado = Calculadora.division(num1, num2);
+            System.out.println(num1 + " / " + num2 + " = " + resultado);
+
+            resultado = Calculadora.raizCuadrada(num1);
+            System.out.println("La raíz cuadrada de " + num1 + " es " + resultado);
+
+            resultado = Calculadora.redondeoBajo(2.4930);
+            System.out.println("2.4930 redondeado a la baja es " + resultado);
+
+            System.out.println("El cubo de " + num1 + " es: " + Calculadora.cubo(num1));
+            System.out.println("El logaritmo de " + num1 + " es: " + Calculadora.logaritmo(num1));
+            System.out.println("El número mayor de " + num1 + " y " + num2 + " es: " + Calculadora.valorMaximo(num1, num2));
+
+        } catch (ArithmeticException e) {
+            System.out.println("Ha sucedido una excepción aritmética");
+        }

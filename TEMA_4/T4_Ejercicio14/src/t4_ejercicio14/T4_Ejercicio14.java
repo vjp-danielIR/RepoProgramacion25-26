@@ -39,6 +39,7 @@ public class T4_Ejercicio14 {
                 }
                    //en caso de que haya entregado una letra capturamos la excepcion y imprimira por pantalla el error 
                    //volviendo a empezar
+                   
             } catch (InputMismatchException e) {
                 System.out.println("No se pueden letras solo numeros");
                 entrada.nextLine(); 
