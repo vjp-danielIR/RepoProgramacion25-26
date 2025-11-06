@@ -1,3 +1,5 @@
+package T4_MetodosEstaticos;
+
 
 import utilidades.Utilidades;   // Importamos clase de otro paquete
 import calculadora.Calculadora; // Importamos clase Calculadora (suponiendo que está en otro paquete)
