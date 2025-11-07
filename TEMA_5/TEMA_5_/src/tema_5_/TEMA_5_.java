@@ -14,7 +14,15 @@ public class TEMA_5_ {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
-}
+        //CREAMOS 2 COCHES
+       // parecido a Scanner entrada = new Scanner(System.in);
+        Coche miCoche= new Coche();
+        System.out.println(miCoche.toString());
+    miCoche.setEspejos(5);
+     System.out.println(miCoche.toString());
+     miCoche.acelerar();
+        System.out.println(miCoche.getEspejos());
+  
+    Coche tuCoche = new Coche("Michelin", "bajo", 3);
+        System.out.println(tuCoche);
+}  }
