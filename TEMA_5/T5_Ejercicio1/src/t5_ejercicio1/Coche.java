@@ -72,10 +72,11 @@ public class Coche {
    
    public String getColor
   
-   @Override;
+   
+   @Override
    public String toString(){
    
-       return "Mi coche tiene ruedas " + this.ruedas + ", suspension " + this.suspension + " y espejos " + this.espejos;
+       return "Mi coche tiene ruedas " + this. + ", suspension " + this. + " y espejos " + this.;
    
    }
    
