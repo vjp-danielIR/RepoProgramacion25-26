@@ -18,7 +18,7 @@ public class Bicicleta {
 
     // Atributo estático que pertenece a la clase (no al objeto)
     private static int numBicicletas = 0;
-
+    private Ciclista ciclista; 
     // Constructores
     public Bicicleta() {
         this.ruedas = 0;
@@ -27,15 +27,17 @@ public class Bicicleta {
         this.frenos = "";
         this.estaPedaleando = false;
         incrementarNumBicicletas();
+        this.ciclista= new Ciclista();
     }
-
-    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean estaPedaleando) {
+    
+    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean par1, Ciclista ciclista) {
         this.ruedas = ruedas;
         this.manillar = manillar;
         this.pedales = pedales;
         this.frenos = frenos;
         this.estaPedaleando = estaPedaleando;
         incrementarNumBicicletas();
+        this.ciclista= new Ciclista();
     }
 
     // Getters y Setters
@@ -71,23 +73,36 @@ public class Bicicleta {
         return this.estaPedaleando;
     }
 
+    
     // Métodos
     public void acelerar() {
         System.out.println("¡Acelerando!");
     }
+    
 
     private static void incrementarNumBicicletas() {
         numBicicletas++;
     }
 
+    
+    
     public static int getNumBicicletas() {
         return numBicicletas;
     }
-
+    
+    public Ciclista getCiclista(){
+     return ciclista=ciclista; 
+    }
+    
+    public void setCiclista(Ciclista ciclista){
+    this.ciclista=ciclista;
+    }
+    
     @Override
     public String toString() {
         return "Mi bicicleta tiene " + this.ruedas + " ruedas, un manillar " + this.manillar +
                ", pedales " + this.pedales + ", frenos " + this.frenos +
-               " y ahora... ¿está pedaleando? " + this.estaPedaleando;
+               " y ahora... ¿está pedaleando? " + this.estaPedaleando
+                + " El ciclista es " + this.ciclista.toString();
     }
 }

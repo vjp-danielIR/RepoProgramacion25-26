@@ -16,6 +16,7 @@ public class Coche {
    private String suspension;
    private int  espejos;
    
+  
    //Constructures para construir un objeto hay 2 tipos 
    
    //1 por defecto inicializa los valores de los atributos por los de defecto
