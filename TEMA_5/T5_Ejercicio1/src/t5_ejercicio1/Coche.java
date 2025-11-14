@@ -16,7 +16,9 @@ public class Coche {
    private String modelo;
    private String color;
    private int velocidad;
-   private booelan motorEncendido;
+   private boolean motorEncendido;
+   private String arrancarCoche;
+   
    
    //Constructures para construir un objeto hay 2 tipos 
    
@@ -29,6 +31,7 @@ public class Coche {
     this.velocidad= 0;
     this.color= "";
     this.motorEncendido= false;
+    
   
    }
    //2 constructor parametrizado ( personalizado)
@@ -39,6 +42,36 @@ public class Coche {
     this.color= color;
     this.motorEncendido= motorEncendido;
    }
+   
+   public boolean arrancarCoche() {
+        this.motorEncendido = true;
+        return this.motorEncendido;
+    }
+   
+   
+   public boolean  apagarCoche() {
+        this.motorEncendido = false;
+        return this.motorEncendido;
+    }
+   
+     public void acelerarCoche() {
+        this.velocidad += 20;
+        System.out.println("subiendo la velocidad : " + this.velocidad + " km/h");
+    }
+     
+    public void frenarCoche() {
+    this.velocidad -= 5;
+        }
+    
+    public void obtenerEstado() {
+    System.out.println("Marca: " + marca);
+    System.out.println("Modelo: " + modelo);
+    System.out.println("Color: " + color);
+    System.out.println("Velocidad: " + velocidad);
+    System.out.println("Motor encendido: " + motorEncendido);
+     }
+    
+    
    //getters y setters devuelven y establecen el valor de los atributos
    public String getMarca(){
        return this.marca;
@@ -69,18 +102,7 @@ public class Coche {
    public void setColor(String color){
        this.color= color;
    }
-   
-   public String getColor
-  
-   
-   @Override
-   public String toString(){
-   
-       return "Mi coche tiene ruedas " + this. + ", suspension " + this. + " y espejos " + this.;
-   
-   }
-   
-   //otros metodos 
+     
    public void acelerar(){
        System.out.println("Acelerando coche...");
    }
@@ -91,5 +113,9 @@ public class Coche {
        System.out.println("Girando coche");
    }
    
+ @Override
+    public String toString() {
+        return "mi coche es de color " + this.color+ " es de la marca "+ this.marca
+     + " es el modelo "+ this.modelo +" ¿esta arrcancado? " + this.motorEncendido + " y voy a "+ this.velocidad + "km";
+    }
 }
-

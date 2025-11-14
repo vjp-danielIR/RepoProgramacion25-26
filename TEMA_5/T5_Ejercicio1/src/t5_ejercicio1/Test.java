@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package t5_ejercicio1;
 
@@ -8,13 +8,9 @@ package t5_ejercicio1;
  *
  * @author alumno
  */
-public class T5_Ejercicio1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       Coche miCoche = new Coche("Toyota", "Corolla", 0, "Rojo", false);
+public class Test {
+     public void Test(){
+    Coche miCoche = new Coche("Toyota", "Corolla", 0, "Rojo", false);
        Coche cochePadre = new Coche("Ford", "Focus", 0, "Azul", false);
        
        
