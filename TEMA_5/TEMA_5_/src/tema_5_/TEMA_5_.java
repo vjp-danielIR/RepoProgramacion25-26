@@ -13,7 +13,7 @@ public class TEMA_5_ {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
    
         // Creamos una bicicleta
         Bicicleta bici = new Bicicleta();
