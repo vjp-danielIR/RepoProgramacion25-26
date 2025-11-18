@@ -18,6 +18,7 @@ public class Curso {
     private static int numeroDeCursos = 0;
 
     // Constructor vacío
+    
     public Curso() {
         this.nombre="";
         this.numeroHoras=0;
@@ -31,7 +32,7 @@ public class Curso {
         numeroDeCursos++;
     }
 
-    // ----- GETTERS Y SETTERS -----
+    // Getter y Setter
     public String obtenerNombre() {
         return nombre;
     }
@@ -48,13 +49,13 @@ public class Curso {
         this.numeroHoras = numeroHoras;
     }
 
-    // Método para establecer ambos a la vez
+    // Método establecer el nombre y las horas 
     public void establecerNombreyHoras(String nombre, int numeroHoras) {
         this.nombre = nombre;
         this.numeroHoras = numeroHoras;
     }
 
-    // ----- MÉTODOS ESTÁTICOS -----
+    // Metodos estaticos
     public static void sumarCursos() {
         numeroDeCursos++;
     }
