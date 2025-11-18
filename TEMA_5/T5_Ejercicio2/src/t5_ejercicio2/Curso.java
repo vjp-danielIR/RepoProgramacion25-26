@@ -63,4 +63,9 @@ public class Curso {
     public static int verNumeroCursos() {
         return numeroDeCursos;
     }
+    
+    @Override
+    public String toString(){
+    return "Nombre del curso: " + nombre + ", Número de horas: " + numeroHoras;
+    }
 }
