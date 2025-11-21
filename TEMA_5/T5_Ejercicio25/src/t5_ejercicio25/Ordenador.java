@@ -17,14 +17,14 @@ public class Ordenador {
     private int precio;
     
     //constructores
-    public void ordenador(){
+    public Ordenador(){
         memoriaRam=0;
         capacidadDisco=0;
         modeloProcesador="";
         modeloGrafica="";
         precio=0;
     }
-     public void ordenador(int memoriaRamo, int capacidadDisco, String modeloProcesador, String modeloGrafica, int precio ){
+     public Ordenador(int memoriaRam, int capacidadDisco, String modeloProcesador, String modeloGrafica, int precio ){
         this.memoriaRam=memoriaRam;
         this.capacidadDisco=capacidadDisco;
         this.modeloProcesador=modeloProcesador;
