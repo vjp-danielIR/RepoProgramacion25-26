@@ -8,6 +8,7 @@ import java.util.Scanner;
  *
  * @author danie
  */
+
 public class Test {
      public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -18,8 +19,8 @@ public class Test {
         pregunta1.setRespuesta("Madrid");
         
         Enunciado pregunta2 = new Enunciado();
-        pregunta2.setPregunta("¿Quién descubrió América?");
-        pregunta2.setRespuesta("Cristóbal Colón");
+        pregunta2.setPregunta("¿Como se denomina a Cristiano Ronaldo?");
+        pregunta2.setRespuesta("El bicho");
         
         Enunciado pregunta3 = new Enunciado();
         pregunta3.setPregunta("¿Cuántos continentes hay en el mundo?");

@@ -19,10 +19,9 @@ public class Test {
         
         // Mostrar información de los 3 alumnos
         System.out.println(" RESULTADOS ");
-        alumno1.mostrarInformacion();
-        alumno2.mostrarInformacion();
-        alumno3.mostrarInformacion();
-       
+        alumno1.toString();
+        alumno2.toString();
+        alumno3.toString();  
     }
     
     // Método para crear un alumno, 

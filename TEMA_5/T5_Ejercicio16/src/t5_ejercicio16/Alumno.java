@@ -51,11 +51,10 @@ public class Alumno {
         return "Sobresaliente";
     }
 }
-    // Método para mostrar información del alumno
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Nota: " + nota);
-        System.out.println("Calificación: " + obtenerCalificacion());
-       
+    // el to String para devolver la informacion
+    @Override
+    public String toString() {
+        return "Nombre: " + this.nombre + " Nota: " + this.nota + " Calificacion: " + this.obtenerCalificacion();
+        
     }
 }

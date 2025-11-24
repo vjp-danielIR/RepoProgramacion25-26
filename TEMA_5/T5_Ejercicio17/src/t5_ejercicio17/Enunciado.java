@@ -13,12 +13,10 @@ public class Enunciado {
     private String respuesta;
     
     // Constructores
-    
     public Enunciado(){
     this.pregunta="";
     this.respuesta="";
     }
-    
     
     public Enunciado(String pregunta, String respuesta) {
         this.pregunta = pregunta;
