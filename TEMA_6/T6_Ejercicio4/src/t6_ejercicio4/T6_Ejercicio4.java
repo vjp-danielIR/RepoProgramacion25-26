@@ -39,5 +39,33 @@ public class T6_Ejercicio4 {
         System.out.println("Tiene una edad de:" + leon.getEdad()+ "anios");
         System.out.println("Y el señorito pesa: " + leon.getPeso()+ "kg como si lloviera dinero");
      
+        
+        System.out.println("====== POLIMORFISMO =======");
+        Animales animal;
+        
+           System.out.println("========= PERRO =========");
+         animal = new Perros("Asta", 12, 22){};
+        System.out.println(" El perro se llama:" + perro.getNombre());
+        System.out.println("Tiene una edad de:" + perro.getEdad()+ "anios");
+        System.out.println("Y el señorito pesa: " +  perro.getPeso()+ "kg como si lloviera dinero");
+        
+        System.out.println("========= GATO =========");
+        animal = new Gatos("Raul", 400, 27){};
+        System.out.println(" El perro se llama:" + lobo.getNombre());
+        System.out.println("Tiene una edad de:" + lobo.getEdad()+ "anios");
+        System.out.println("Y el señorito pesa: " + lobo.getPeso()+ "kg como si lloviera dinero");
+        
+        System.out.println("========= LOBO =========");
+          animal = new Lobos("Gabriel", 7, 60){};
+        System.out.println(" El perro se llama:" + gato.getNombre());
+        System.out.println("Tiene una edad de:" + gato.getEdad()+ "anios");
+        System.out.println("Y el señorito pesa: " + gato.getPeso()+ "kg como si lloviera dinero");
+        
+        System.out.println("========= LEON =========");
+        animal = new Leones("Hamudi", 9, 195){};
+        System.out.println(" El perro se llama:" + leon.getNombre());
+        System.out.println("Tiene una edad de:" + leon.getEdad()+ "anios");
+        System.out.println("Y el señorito pesa: " + leon.getPeso()+ "kg como si lloviera dinero");
+        
     }
     }
