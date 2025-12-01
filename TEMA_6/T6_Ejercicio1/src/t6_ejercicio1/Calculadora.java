@@ -10,7 +10,7 @@ package t6_ejercicio1;
  */
 public abstract class Calculadora {
    //atributo
-    private int numero;
+    int numero;
    //constructores
     public Calculadora(){
     this.numero=0;
@@ -26,7 +26,7 @@ public abstract class Calculadora {
     this.numero=numero;
     }
     
-    public abstract int realizarOperacion();
+    public abstract void realizarOperacion();
     
     @Override
     public String toString(){

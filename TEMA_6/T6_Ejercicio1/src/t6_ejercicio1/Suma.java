@@ -32,9 +32,9 @@ public abstract class Suma  extends Calculadora{
     }
     
     @Override
-   public int  realizarOperacion(){
+   public void  realizarOperacion(){
          System.out.println("la suma de " + super.getNumero() + " y " + this.sumando + " es igual a = " + (super.getNumero() + this.sumando));
-        return 0;
+       
      }
     
 }
