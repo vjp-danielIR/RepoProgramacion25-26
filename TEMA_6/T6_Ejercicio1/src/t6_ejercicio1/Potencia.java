@@ -8,9 +8,13 @@ package t6_ejercicio1;
  *
  * @author alumno
  */
-public abstract class Potencia  extends Calculadora{
-     private final int exponente;
+public class Potencia  extends Calculadora{
+     private int exponente;
 
+     public Potencia(){
+     super();
+     this.exponente=exponente;
+     }
     public Potencia(int numero, int exponente) {
         super(numero);
         this.exponente = exponente;
@@ -20,6 +24,7 @@ public abstract class Potencia  extends Calculadora{
      @Override
    public void realizarOperacion() {
         double resultado = Math.pow(numero, exponente);
+         System.out.println("el resultado de la operacion es: " + resultado );
         
     }
 }

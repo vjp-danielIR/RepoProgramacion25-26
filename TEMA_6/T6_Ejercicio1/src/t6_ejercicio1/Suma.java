@@ -8,7 +8,7 @@ package t6_ejercicio1;
  *
  * @author alumno
  */
-public abstract class Suma  extends Calculadora{
+public  class Suma  extends Calculadora{
     //atributo
     private int sumando;
 
