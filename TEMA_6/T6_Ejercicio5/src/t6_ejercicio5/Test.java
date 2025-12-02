@@ -35,10 +35,23 @@ public class Test {
         System.out.println("== POLIMORFISMO ==");
         System.out.println("");
         
-        Mamifero orni= new Ornitorrinco(20, 24, "violeta", "hembra");
-        Mamifero murcia= new Murcielago(15, 7, "azul","hombre");
-        
+       Oviparo orni= new Ornitorrinco(20, 24, "violeta", "hembra");
+       Volador murcia= new Murcielago(15, 7, "azul","hombre");
+       
+        System.out.println("");
+        System.out.println("Ornitorrinco");
+       orni.incubarHuevos();
+       orni.mostrarNumHuevos();
+       orni.obtenerMensajeOviparo();
+       orni.ponerHuevos();
         System.out.println(orni);
+        
+        System.out.println("");
+        System.out.println("Murcielago");
+        murcia.aumentarAlturaVuelo();
+        murcia.bajarAlturaVuelo();
+        murcia.mostrarAlturaVuelo();
+        murcia.obtenerMensajeVolador();
         System.out.println(murcia);
     
     
