@@ -10,7 +10,7 @@ package t6_ejercicio2;
  * hereda de Persona y tiene el atributo
 grupo
  */
-public class Alumno extends Persona {
+public  class Alumno extends Persona {
      //atributo propio
     private int grupo;
     
@@ -37,7 +37,10 @@ public class Alumno extends Persona {
         System.out.println("hola mi nombre es" + super.getNombre() + " y soy el grupo:" + this.grupo);
     }
 
-
+ @Override
+    public String toString() {
+        return "Alumno: " + getNombre() + ", Grupo: " + grupo;
+    }
 
 
 }

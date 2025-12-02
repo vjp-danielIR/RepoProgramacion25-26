@@ -9,7 +9,7 @@ package t6_ejercicio2;
  * @author alumno
  * atributo nombre y el método abstracto saludar
  */
-public class Persona {
+public abstract  class Persona {
     //atributo
     String nombre;
     //constructor
@@ -29,9 +29,9 @@ public class Persona {
     this.nombre=nombre;
     }
     
-    //metodo saludar
-    public void Saludar(){
-        System.out.println("hola mi nombre es" + this.nombre);
-    }
-            
+    //metodo saluda  
+    public abstract void Saludar();   
+
+    
+
 }

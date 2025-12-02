@@ -41,4 +41,8 @@ public class Profesor extends Persona{
         System.out.println("Hola soy el profesor: " + super.getNombre() + " y me especializo en: " + this.especialidad);
     }
     
+    @Override
+    public String toString() {
+        return "Profesor: " + getNombre() + ", Especialidad: " + especialidad;
+    }
 }
