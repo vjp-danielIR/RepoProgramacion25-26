@@ -20,12 +20,15 @@ public class T6_Ejercicio8 {
          
          Vehiculo coche = new Coche(80, false);
         Vehiculo moto = new Moto(60, false);
-
+        
+        
+        //EL RESULTADO CAMBIA SEGUN EL PRIMERO es decir si el primero es la moto se imprimira lo de la moto si el primero es el coche se imprimira procesar vehiculo en el de coche
+         System.out.println("Procesando moto");
+        procesarVehiculo(moto);
         System.out.println("Procesando coche");
         procesarVehiculo(coche);
 
-        System.out.println("Procesando moto");
-        procesarVehiculo(moto);
+        
     }
 
     public static void procesarVehiculo(Vehiculo vehiculo) {
