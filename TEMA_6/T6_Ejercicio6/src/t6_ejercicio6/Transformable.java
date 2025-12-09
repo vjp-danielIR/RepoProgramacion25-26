@@ -6,9 +6,14 @@ package t6_ejercicio6;
 
 /**
  *
- * @author alumno
+ * @author danie
  */
 public interface Transformable {
-    
+    //metodos que se implementan en los objetos
+    String concatenarTodo();
+    String obtenerIniciales();
+    void contarVocales();
+    String obtenerCadenaMasLarga();
+    boolean buscarCadena(String cadena);
 }
-    
+
