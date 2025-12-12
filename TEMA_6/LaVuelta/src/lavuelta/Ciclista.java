@@ -19,13 +19,11 @@ public abstract class Ciclista {
     int nivelHidratacion;
     
     //atributo estatico para contar cilicstas creados
-    public static int aumentarNumeroCiclistas(){
-        int numCiclistas=0;
-        numCiclistas++;
-        return numCiclistas;
-    }
+    public static int aumentarNumeroCiclistas= 0;
+        
+     
     public int mostrarNumBiciclistas(){
-        return aumentarNumeroCiclistas();
+        return aumentarNumeroCiclistas;
     }
     //constructores 
     //por defecto
@@ -37,7 +35,7 @@ public abstract class Ciclista {
     numeroBidones=2;
     velocidad=0;
     nivelHidratacion=50;
-    aumentarNumeroCiclistas();
+    aumentarNumeroCiclistas++;
     }
     
     //constructor parametrizado es decir le pasamos los atributos por parametros
@@ -49,7 +47,7 @@ public abstract class Ciclista {
     this.numeroBidones=numeroBidones;
     this.velocidad=velocidad;
     this.nivelHidratacion=nivelHidratacion;
-    aumentarNumeroCiclistas();
+    aumentarNumeroCiclistas++;
     }
     
     //getter y setter para obtener y esytablecer
@@ -130,9 +128,9 @@ public abstract class Ciclista {
      
     }
     public final void tirarBidon(){
-    numeroBidones-=2;
+    numeroBidones--;
     }
-    
+ 
     public abstract void comer();
     public abstract void beber();
     }

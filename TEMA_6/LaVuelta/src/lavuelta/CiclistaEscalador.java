@@ -59,7 +59,8 @@ public  class CiclistaEscalador extends Ciclista implements Pedaleable{
     public void beber() {
         if(getNumeroBidones()== 0){
             cogerBidones();
-            setNivelHidratacion(+10);
+            setNivelHidratacion(getNivelHidratacion()+10);
+            tirarBidon();
             tirarBidon();
             System.out.println(" El escalador" + getNombre() + " se ha hidratado. Su nivel de hidratacion ahora es de: " + getNivelHidratacion());
         
@@ -73,7 +74,7 @@ public  class CiclistaEscalador extends Ciclista implements Pedaleable{
     public void sprintar() {
         if(getKmMeta() <= 0.3 && getEnergia() >= 20){
         setVelocidad((potencia/fuerza));
-        setEnergia(-20);
+        setEnergia(getEnergia()-20);
         System.out.println("El escalador" + getNombre() + " esta esprintando a " + getVelocidad() + "km/h.");
     } else {
        System.out.println("Aun no puedes esprintar");     
@@ -84,18 +85,18 @@ public  class CiclistaEscalador extends Ciclista implements Pedaleable{
     public void atacar() {
      if(getEstaEscapado() == false){
         setEstaEscapado(true);
-        setNivelHidratacion(-20);
+        setNivelHidratacion(getNivelHidratacion() -20);
          System.out.println("El escalador"  + getNombre() + "esta atacando");
     }
     }
-    /*
-    metodo para recuperar energia por cada km que false antes de los 15 de la meta 
+    
+    //metodo para recuperar energia por cada km que false antes de los 15 de la meta 
     @Override
-    public float recuperar(getKmMeta()) {
+    public float recuperar(float kmRecuperacion) {
      if(getKmMeta() > 15){
          setEnergia(+5);
          System.out.println(getNombre() + " esta recuperando.");   
      }
         return getEnergia();
-    } */
+    } 
 }

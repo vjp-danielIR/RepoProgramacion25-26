@@ -10,7 +10,7 @@ package lavuelta;
  */
 public interface Pedaleable {
     
-    //public void sprintar();
+    public void sprintar();
     public void atacar();
-   // public float recuperar(getKmMeta());    
+   public float recuperar( float kmRecuperacion);    
 }
