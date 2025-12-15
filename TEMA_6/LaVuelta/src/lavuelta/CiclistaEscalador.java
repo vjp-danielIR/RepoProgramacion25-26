@@ -73,7 +73,7 @@ public  class CiclistaEscalador extends Ciclista implements Pedaleable{
     @Override
     public void sprintar() {
         if(getKmMeta() <= 0.3 && getEnergia() >= 20){
-        setVelocidad((potencia/fuerza));
+        setVelocidad(potencia/fuerza);
         setEnergia(getEnergia()-20);
         System.out.println("El escalador" + getNombre() + " esta esprintando a " + getVelocidad() + "km/h.");
     } else {
@@ -94,7 +94,7 @@ public  class CiclistaEscalador extends Ciclista implements Pedaleable{
     @Override
     public float recuperar(float kmRecuperacion) {
      if(getKmMeta() > 15){
-         setEnergia(+5);
+         getEnergia() ;
          System.out.println(getNombre() + " esta recuperando.");   
      }
         return getEnergia();
