@@ -20,13 +20,10 @@ public class T1234Ejercicio21_Medio {
      * salir
      */
     public static void main(String[] args) {
-        //creamos scanner
       Scanner entrada = new Scanner(System.in);
-        //variables
       int opcion= 0;
       
          do {
-              //menu
             System.out.println("====== MENU ======");
             System.out.println("1. Opcion 1");
              System.out.println("____________");
@@ -37,10 +34,10 @@ public class T1234Ejercicio21_Medio {
              System.out.println("");
             System.out.print("Dime una opcion: ");
 
-            try { //sitio donde puede fallar lo ponemos dentro de aqui para capturar error
+            try {
                 opcion = entrada.nextInt();
 
-                switch (opcion) { //la opcion que eliga sera la que le aparecera 
+                switch (opcion) {
                     case 1:
                         System.out.println("Elegiste la primera opcion");
                         break;
@@ -54,7 +51,7 @@ public class T1234Ejercicio21_Medio {
                         System.out.println("Opcion no valida. Intenta de nuevo.");
                 }
 
-            } catch (InputMismatchException e) { //si falla le haremos saber con que el valor no es apto y volvera a aparecer el menu
+            } catch (InputMismatchException e) {
                 System.out.println("Valor introducido no valido solo se pueden ingresar numeros");
                 entrada.nextLine(); // Limpiar buffer
             }
