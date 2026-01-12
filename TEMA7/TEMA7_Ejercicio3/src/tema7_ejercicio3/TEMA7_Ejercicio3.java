@@ -20,7 +20,7 @@ public class TEMA7_Ejercicio3 {
             mostrarVector(vector);
 
     }
-    
+    //metodo para pedir por pantalla la longitud del array 
     public static int longitud(){
     Scanner entrada=new Scanner(System.in);
     int longitud=0;
@@ -33,23 +33,21 @@ public class TEMA7_Ejercicio3 {
             System.out.println(e);
             System.out.println("valor no valido");
         }
-        finally{
-        entrada.nextLine();
-        }
+        
         if(longitud<1){
             System.out.println("la longitud del vector tiene que ser mayor que cero");
         }
     }while(longitud<1);
             return longitud;
     }
-    
+    //metodo para poner numeros aleatorios del 1 al 7
     public static void numAleatorio(int vector[]){
-        int i;
-        for(i=0; i<vector.length;i++){
+
+        for(int i=0; i<vector.length;i++){
         vector[i]=(int) (Math.random() * (7-1) +1);
         }
     }
-    
+    //metodo para mostrar todas las partes del array
     public static void mostrarVector(int vector[]){
     int i;
         System.out.println("VECTOR");
