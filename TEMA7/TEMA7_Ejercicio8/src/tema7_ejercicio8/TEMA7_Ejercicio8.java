@@ -28,6 +28,7 @@ public class TEMA7_Ejercicio8 {
          return entrada.nextInt();
  
     }
+    //metodo que le da le da la vuelta a los numeros
     public static int[] delReves( int numero){
         int[] reves = new int[5];
 
@@ -38,10 +39,11 @@ public class TEMA7_Ejercicio8 {
         }
         return reves;
     }
+    //metodo que muesta el array
     public static void mostrarArray(int[] reves) {
-        System.out.print("Número al revés: ");
         for (int i = 0; i < reves.length; i++) {
-            System.out.print("\n"+reves[i]);
+            System.out.print(reves[i]);
+            System.out.println("");
         }
     }
 }
