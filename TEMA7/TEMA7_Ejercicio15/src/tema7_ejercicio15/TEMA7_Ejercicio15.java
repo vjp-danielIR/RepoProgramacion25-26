@@ -22,7 +22,7 @@ public class TEMA7_Ejercicio15 {
         do{
             opcion= mostrarMenu();
             switch(opcion){
-                case 1 -> rellenarArray();
+                case 1 -> rellenarArray(ventas);
                 case 2 -> mostrarVentas(ventas,meses);
                 case 3 -> ventasReves(ventas);
                 case 4 -> sumaTotal(ventas);
@@ -35,11 +35,10 @@ public class TEMA7_Ejercicio15 {
         }while(opcion !=7);
         }
     //metodo para rellenar un arrayu con numeros aleatorios desde el 10 al 100
-    public static void rellenarArray(){
-      int[] ventas= new int[12];
-    for(int i=0;i<ventas.length;i++){
-    ventas[i]= (int) (Math.random()* (101 - 10) +10);
-    }
+    public static void rellenarArray(int ventas[]){
+                for(int i=0;i<ventas.length;i++){
+             ventas[i]= (int) (Math.random()* (101 - 10) +10);
+         }
     }
     public static void mostrarVentas(int ventas[], String meses[]){
         for(int i=0;i<ventas.length;i++){
