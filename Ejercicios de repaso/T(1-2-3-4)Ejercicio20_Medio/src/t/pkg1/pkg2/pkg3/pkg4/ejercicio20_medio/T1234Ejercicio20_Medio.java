@@ -16,9 +16,12 @@ public class T1234Ejercicio20_Medio {
      * Crea un método que reciba por parámetro un número entero y devuelva true si el número es primo y false en caso contrario.
      */
     public static void main(String[] args) {
-       int num=6; //variable
-       
-       esPrimo(num); //se la paso al metodo
+          
+        // Prueba con numeros no necesito hacer variables por que les  puedo pasar directamente un numero
+        System.out.println("¿El número 7 es primo? " + esPrimo(7));
+        System.out.println("¿El número 15 es primo? " + esPrimo(15));
+        System.out.println("¿El número 17 es primo? " + esPrimo(17));
+    
     }
     public static boolean esPrimo(int num){ //metodo estatico que recibe por parametros
         // Los números menores o iguales a 1 no son primos 
