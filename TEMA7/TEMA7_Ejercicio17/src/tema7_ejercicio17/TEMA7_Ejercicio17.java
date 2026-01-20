@@ -14,28 +14,28 @@ public class TEMA7_Ejercicio17 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      int[] numeros = new int[10];
-        
+        int[] numeros = new int[10];
+
         rellenar(numeros);
-        
+
         System.out.println("Array original:");
         mostrar(numeros);
-        
+
         ordenar(numeros);
-        
+
         System.out.println("Array ordenado de mayor a menor:");
         mostrar(numeros);
     }
-    
+
     // Rellena el array con numeros aleatorios del 0 al 9
     static void rellenar(int[] numeros) {
         int i = 0;
         while (i < numeros.length) {
-            numeros[i] = (int)(Math.random() * 10);
+            numeros[i] = (int) (Math.random() * 10);
             i++;
         }
     }
-    
+
     // Muestra los elementos del array en una linea
     static void mostrar(int[] numeros) {
         for (int i = 0; i < numeros.length; i++) {
@@ -43,7 +43,7 @@ public class TEMA7_Ejercicio17 {
         }
         System.out.println();
     }
-    
+
     // Ordena el array de mayor a menor
     static void ordenar(int[] numeros) {
         int num = 0;
@@ -61,4 +61,3 @@ public class TEMA7_Ejercicio17 {
         }
     }
 }
-

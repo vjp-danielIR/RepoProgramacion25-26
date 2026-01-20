@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tema7_ejercicio14;
- import java.util.Scanner;
+
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
@@ -20,7 +22,7 @@ public class TEMA7_Ejercicio14 {
         double[][] temp = new double[4][7];
 
         // Días de la s
-        String[] dias = {"Lunes", "Martes", "Miercoles","Jueves", "Viernes", "Sábado", "Domingo"};
+        String[] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo"};
 
         int opcion;
 
@@ -42,26 +44,24 @@ public class TEMA7_Ejercicio14 {
                     rellenarTemp(temp, dias);
                     break;
 
-                    
                 case 2:
                     // Mostrar temp
-                   mostrarTemp(temp,dias);
-                  break;
-      
+                    mostrarTemp(temp, dias);
+                    break;
+
                 case 3:
                     // Temperatura media del mes
-                  tempMedia(temp, dias); 
+                    tempMedia(temp, dias);
                     break;
 
                 case 4:
                     // Día o días más calurosos
-                   maxCalor(temp, dias);
+                    maxCalor(temp, dias);
                     break;
 
-                    
                 case 5:
                     System.out.println("Saliendo del programa...");
-                    
+
                     break;
 
                 default:
@@ -70,66 +70,66 @@ public class TEMA7_Ejercicio14 {
 
         } while (opcion != 5);
 
-    
     }
-    public static void rellenarTemp(double temp[][], String dias[]){
+
+    public static void rellenarTemp(double temp[][], String dias[]) {
         Scanner entrada = new Scanner(System.in);
-                    for (int s = 0; s < 4; s++) {
-                      System.out.println("");
-                       System.out.println("Semana " + (s + 1));
-                    for (int d = 0; d < 7; d++) {
-                       System.out.print(dias[d] + ":");
-                        temp[s][d] = entrada.nextDouble();
-         }
-       }
+        for (int s = 0; s < 4; s++) {
+            System.out.println("");
+            System.out.println("Semana " + (s + 1));
+            for (int d = 0; d < 7; d++) {
+                System.out.print(dias[d] + ":");
+                temp[s][d] = entrada.nextDouble();
+            }
+        }
     }
-    
-    public static void mostrarTemp(double temp[][], String dias[]){
-                   for (int s = 0; s < 4; s++) {
-                       System.out.println("");
-                        System.out.println("Semana " + (s + 1));
-                   for (int dia = 0; dia < 7; dia++) {
-                            System.out.println(dias[dia] + ": " + temp[s][dia] + " grados");
-          }
-       }
+
+    public static void mostrarTemp(double temp[][], String dias[]) {
+        for (int s = 0; s < 4; s++) {
+            System.out.println("");
+            System.out.println("Semana " + (s + 1));
+            for (int dia = 0; dia < 7; dia++) {
+                System.out.println(dias[dia] + ": " + temp[s][dia] + " grados");
+            }
+        }
     }
-    public static void tempMedia(double temp[][], String dias[]){
-              double suma = 0;
 
-                    for (int s = 0; s < 4; s++) {
-                        for (int d = 0; d < 7; d++) {
-                            suma += temp[s][d];
-                        }
-                    }
+    public static void tempMedia(double temp[][], String dias[]) {
+        double suma = 0;
 
-                    double media = suma / 28;
-                    System.out.printf("La temperatura media del mes es:%.1f grados\n ", media);
+        for (int s = 0; s < 4; s++) {
+            for (int d = 0; d < 7; d++) {
+                suma += temp[s][d];
+            }
+        }
+
+        double media = suma / 28;
+        System.out.printf("La temperatura media del mes es:%.1f grados\n ", media);
     }
-    
-    public static void maxCalor(double temp[][], String dias[]){
-             double maxCalor = temp[0][0];
 
-                    for (int s = 0; s < 4; s++) {
-                        for (int d = 0; d < 7; d++) {
-                            if (temp[s][d] > maxCalor) {
-                                maxCalor = temp[s][d];
-                            }
-                        }
-                    }
+    public static void maxCalor(double temp[][], String dias[]) {
+        double maxCalor = temp[0][0];
 
-                    System.out.println("El dia o dias mas calurosos fueron:");
-                    for (int semana = 0; semana < 4; semana++) {
-                        for (int dia = 0; dia < 7; dia++) {
-                            if (temp[semana][dia] == maxCalor) {
-                                System.out.println(
-                                    dias[dia] + " de la semana " + (semana + 1) +
-                                    " con " + maxCalor + " grados"
-                                );
-                            }
-                        }
-                    }
-                    
-                    
+        for (int s = 0; s < 4; s++) {
+            for (int d = 0; d < 7; d++) {
+                if (temp[s][d] > maxCalor) {
+                    maxCalor = temp[s][d];
+                }
+            }
+        }
+
+        System.out.println("El dia o dias mas calurosos fueron:");
+        for (int semana = 0; semana < 4; semana++) {
+            for (int dia = 0; dia < 7; dia++) {
+                if (temp[semana][dia] == maxCalor) {
+                    System.out.println(
+                            dias[dia] + " de la semana " + (semana + 1)
+                            + " con " + maxCalor + " grados"
+                    );
+                }
+            }
+        }
+
     }
-    
+
 }

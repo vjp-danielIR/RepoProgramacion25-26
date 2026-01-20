@@ -15,27 +15,27 @@ public class TEMA7_Ejercicio10 {
      */
     public static void main(String[] args) {
         int[] numeros = new int[10];
-        
+
         rellenar(numeros);
-        
+
         System.out.println("Se han generado los siguientes numeros:");
         mostrar(numeros);
-        
+
         eliminarRepetidos(numeros);
-        
+
         System.out.println("Sustituimos los elementos repetidos por un 0:");
         mostrar(numeros);
     }
-    
+
     // Rellena el array con numeros aleatorios del 1 al 8
     static void rellenar(int[] numeros) {
         int i = 0;
         while (i < numeros.length) {
-            numeros[i] = (int)(Math.random() * 8) + 1;
+            numeros[i] = (int) (Math.random() * 8) + 1;
             i++;
         }
     }
-    
+
     // Muestra los elementos del array en una linea
     static void mostrar(int[] numeros) {
         for (int i = 0; i < numeros.length; i++) {
@@ -43,7 +43,7 @@ public class TEMA7_Ejercicio10 {
         }
         System.out.println();
     }
-    
+
     // Sustituye por 0 todos los valores que aparecen mas de una vez
     static void eliminarRepetidos(int[] numeros) {
         int num = 0;
