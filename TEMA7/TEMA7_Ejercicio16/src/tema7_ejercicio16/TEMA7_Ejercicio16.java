@@ -27,7 +27,7 @@ public class TEMA7_Ejercicio16 {
      * con los nombres de las asignaturas) 6. Salir del programa.
      */
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+         Scanner entrada = new Scanner(System.in);
         String[] alumnos = {"Pepe", "Juan", "Ana", "Marta", "Pedro", "Maria"};
         String[] asignatura = {"Lengua", "Mates", "Historia", "Fisica"};
         int[][] notas = new int[6][4];
@@ -90,13 +90,54 @@ public class TEMA7_Ejercicio16 {
                 }
 
                 case 4 -> {
-                    //el alumno con más suspensos
-                    
+                    // Alumno con más suspensos
+                    int maxSuspensos = 0;
+                    int indiceMasSuspensos = 0;
+
+                    for (int i = 0; i < alumnos.length; i++) {
+                        int suspensos = 0;
+                        for (int j = 0; j < asignatura.length; j++) {
+                            if (notas[i][j] < 5) {
+                                suspensos++;
+                            }
+                        }
+
+                        if (suspensos > maxSuspensos) {
+                            maxSuspensos = suspensos;
+                            indiceMasSuspensos = i;
+                        }
+                    }
+
+                    if (maxSuspensos == 0) {
+                        System.out.println("\n¡No hay ningún alumno con suspensos!");
+                    } else {
+                        System.out.println("\nEl alumno con más suspensos es "
+                                + alumnos[indiceMasSuspensos] + " con "
+                                + maxSuspensos + " suspenso(s)");
+                    }
                 }
 
                 case 5 -> {
+                    // Asignatura más difícil (nota media más baja)
+                    double menorMedia = 11; 
+                    
 
-                }
+                    for (int j = 0; j < asignatura.length; j++) {
+                        int suma = 0;
+                        for (int i = 0; i < alumnos.length; i++) {
+                            suma += notas[i][j];
+                        }
+                        double media = (double) suma / alumnos.length;
+
+                        if (media < menorMedia) {
+                            menorMedia = media;
+                          
+                        }
+                    
+
+                    System.out.println("\nLa asignatura más difícil es " +asignatura[j]
+                         + " con una media de " + String.format("%.2f", menorMedia));
+                }}
 
                 case 6 ->
                     System.out.println("Saliendo del programa...");
@@ -111,3 +152,4 @@ public class TEMA7_Ejercicio16 {
     }
 
 }
+
