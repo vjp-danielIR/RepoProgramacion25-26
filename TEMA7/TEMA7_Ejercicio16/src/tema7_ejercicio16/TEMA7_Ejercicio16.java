@@ -120,7 +120,7 @@ public class TEMA7_Ejercicio16 {
                 case 5 -> {
                     // Asignatura más difícil (nota media más baja)
                     double menorMedia = 11; 
-                    
+                    int column= 0;
 
                     for (int j = 0; j < asignatura.length; j++) {
                         int suma = 0;
@@ -133,11 +133,13 @@ public class TEMA7_Ejercicio16 {
                             menorMedia = media;
                           
                         }
+                    column= j;
+                    }
                     
-
-                    System.out.println("\nLa asignatura más difícil es " +asignatura[j]
+                    System.out.println("\nLa asignatura más difícil es " +asignatura[column]
                          + " con una media de " + String.format("%.2f", menorMedia));
-                }}
+                }
+
 
                 case 6 ->
                     System.out.println("Saliendo del programa...");
@@ -146,8 +148,7 @@ public class TEMA7_Ejercicio16 {
                     System.out.println("Opción incorrecta");
             }
 
-        } while (opcion
-                != 5);
+        } while (opcion != 6);
 
     }
 

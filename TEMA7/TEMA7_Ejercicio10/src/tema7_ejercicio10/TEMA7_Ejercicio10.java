@@ -31,7 +31,7 @@ public class TEMA7_Ejercicio10 {
     static void rellenar(int[] numeros) {
         int i = 0;
         while (i < numeros.length) {
-            numeros[i] = (int) (Math.random() * 8) + 1;
+            numeros[i] = (int) (Math.random() * (9-1)) + 1;
             i++;
         }
     }
@@ -52,6 +52,7 @@ public class TEMA7_Ejercicio10 {
             if (valorActual != 0) {
                 int j = num + 1;
                 boolean hayCopia = false;
+
                 while (j < numeros.length) {
                     if (numeros[j] == valorActual) {
                         hayCopia = true;

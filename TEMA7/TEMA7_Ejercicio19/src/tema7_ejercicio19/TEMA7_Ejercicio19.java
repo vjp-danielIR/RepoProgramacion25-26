@@ -28,13 +28,12 @@ public class TEMA7_Ejercicio19 {
         int max = 80;
         int mayor = vector[0];
         int menor = vector[0];
-        int repetidos = 0;
         int media = 0;
         int suma = 0;
 
-        //rellenamos el array contre min(10) y max(80) lo de floor lo tuve que buscar no sabia como hacer el entre x y y numeros
+        //rellenamos el array contre min(10) y max(80) 
         for (int i = 0; i < 100; i++) {
-            vector[i] = (int) Math.floor(Math.random() * (max - min + 1) + min);
+            vector[i] = (int) (Math.random() * (max - min + 1) + min);
             System.out.println(vector[i]);
         }
         //saber que numeros es el mayor

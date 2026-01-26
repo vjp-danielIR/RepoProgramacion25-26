@@ -14,11 +14,11 @@ public class TEMA7_Ejercicio6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] primos = new int[8];
+        int[] primos = new int[80];
         int num = 1;
         int contador = 0;
 
-        while (contador < 8) {
+        while (contador < 80 ) {
             if (esPrimo(num)) {
                 primos[contador] = num;
                 contador++;
@@ -36,15 +36,16 @@ public class TEMA7_Ejercicio6 {
     }
 
     // Función simple para saber si un número es primo
-    public static boolean esPrimo(int n) {
-        if (n < 2) {
+    public static boolean esPrimo(int num) {
+       boolean primo=false;
+        if (num < 2) {
             return false;
         }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                primo= false;
             }
         }
-        return true;
+        return primo;
     }
 }
