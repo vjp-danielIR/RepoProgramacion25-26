@@ -35,7 +35,7 @@ public class TEMA7_Ejercicio9 {
     public static int contarCaracteres(int numero) {
         int contador = 0;
 
-        while (numero >= 0) {
+        while (numero > 0) {
             numero = numero / 10;
             contador++;
         }
