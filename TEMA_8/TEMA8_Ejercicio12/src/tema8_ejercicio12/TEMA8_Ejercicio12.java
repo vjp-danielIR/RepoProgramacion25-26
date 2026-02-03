@@ -49,7 +49,7 @@ public class TEMA8_Ejercicio12 {
 
         System.out.println("APARTIR DE AQUI ES DEL EJERCICIO 12");
         Scanner entrada = new Scanner(System.in);
-        int opcion = 0;
+        int opcion;
 
         //creamos el vecotr
         Muebles[] muebles = new Muebles[4];
@@ -64,22 +64,17 @@ public class TEMA8_Ejercicio12 {
             System.out.println("2. Mostrar muebles");
             System.out.println("--------------------------------");
             System.out.println("3. Mostrar muebles por precio");
-            opcion = entrada.nextInt();
+           
 
             try {
                 opcion = entrada.nextInt();
 
                 switch (opcion) {
-                    case 1:
-                        rellenarMuebles(muebles);
-                        break;
-                    case 2 :
-                        mostrarMuebles(muebles);
-                        break;
-                    case 3:
-                        
-                        break;
-                    default: System.out.println("Opcion no valida"); 
+                    case 1 -> rellenarMuebles(muebles);
+                    case 2 -> mostrarMuebles(muebles);
+                    case 3 -> mostrarMueblesPorPrecio(muebles);
+                    
+                    default -> System.out.println("Opcion no valida"); 
 
                         }
             } catch (InputMismatchException e) {
@@ -93,10 +88,11 @@ public class TEMA8_Ejercicio12 {
     public static void rellenarMuebles(Muebles[] muebles) {
         for (int i = 0; i < muebles.length; i++) {
             System.out.println("---- Mueble " + (i + 1) + " ----");
-            muebles[i].setDescripcion("Soy un perro callejero que no sabe a dónde ir\n"
-                    + "Solo el olor de tu pelo me da ganas de vivir\n"
-                    + "Me enganché a tu calor, condenándome al dolor\n"
-                    + "Soy un perro callejero sin tiempo pa' decidir");
+            muebles[i].setDescripcion("""
+                                      Soy un perro callejero que no sabe a d\u00f3nde ir
+                                      Solo el olor de tu pelo me da ganas de vivir
+                                      Me enganch\u00e9 a tu calor, conden\u00e1ndome al dolor
+                                      Soy un perro callejero sin tiempo pa' decidir """);
             muebles[i].setPrecio(42);
 
             System.out.println("---- Mueble " + (i + 1) + " ----");
@@ -134,6 +130,18 @@ public class TEMA8_Ejercicio12 {
     public static void mostrarMuebles(Muebles[] muebles) {
         for (int i = 0; i < muebles.length; i++) {
             System.out.println("El array esta compuesto por: " + (i + 1) + muebles[i]);
+        }
+    }
+
+    public static void mostrarMueblesPorPrecio(Muebles[] muebles) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Introduce un precio para mostrar los muebles mas baratos");
+        double precio = entrada.nextDouble();
+
+        for (int i = 0; i < muebles.length; i++) {
+            if (muebles[i].getPrecio() < precio) {
+                System.out.println("Mueble " + (i + 1) + " es mas barato que " + precio + ": " + muebles[i]);
+            }
         }
     }
 
