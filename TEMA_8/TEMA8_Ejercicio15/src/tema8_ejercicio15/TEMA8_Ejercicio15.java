@@ -56,11 +56,11 @@ public class TEMA8_Ejercicio15 {
     }
     
     public static String peliRentable(Peliculas[] peliculas, Socios[] socios){
-         int suma=0;
+         int suma=0, suma2=0;
         for(int i=0; i<socios.length; i ++){
            suma+=socios[i].getPrecioAbonado(i);
            suma2+=peliculas[i].getCosteLicencia(i);
-           
+          
            return "";
         }
         return null;
