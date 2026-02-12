@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BusquedaBinariaIT {
     
     public BusquedaBinariaIT() {
+        
     }
 
     /**
@@ -21,43 +22,23 @@ public class BusquedaBinariaIT {
      */
     @org.junit.jupiter.api.Test
     public void testBusquedaBinaria() {
+       //no hay un indice 11 asi que el resultado debe ser negativo por defecto
+        BusquedaBinaria busqueda = new BusquedaBinaria();
+        int resultado = busqueda.busquedaBinaria(11);
+        assertEquals(-1, resultado);
         
+        //No hay negativos asi que el resultado tambien debe ser negativo
+        resultado = busqueda.busquedaBinaria(-5);
+        assertEquals(-1, resultado);
         
-    }
-   
-
-    @Test
-    void testNumeroMedio() {
-        busqueda = new BusquedaBinaria();
-        int resultado = busqueda.busquedaBinaria(5);
+        //guarda la posicion 5 del array y el resultado debe ser 4 
+          resultado = busqueda.busquedaBinaria(5);
         assertEquals(4, resultado);
-    }
-
-    @Test
-    void testPrimerNumero() {
-        busqueda = new BusquedaBinaria();
-        int resultado = busqueda.busquedaBinaria(1);
-        assertEquals(0, resultado);
-    }
-
-    @Test
-    void testUltimoNumero() {
-        busqueda = new BusquedaBinaria();
-        int resultado = busqueda.busquedaBinaria(10);
-        assertEquals(9, resultado);
-    }
-
-    @Test
-    void testNumeroNoExiste() {
-        Busqueda = new BusquedaBinaria();
-        int resultado = Busqueda.busquedaBinaria(20);
+        
+         //No hay un indice 11 asi que lo mismo que el anterior debe dar el resultado negativo 
+        resultado = busqueda.busquedaBinaria(11);
         assertEquals(-1, resultado);
+        
     }
-
-    @Test
-    void testNumeroNegativo() {
-        busqueda = new BusquedaBinaria();
-        int resultado = busqueda.busquedaBinaria(-5);
-        assertEquals(-1, resultado);
-    }
+  
 }

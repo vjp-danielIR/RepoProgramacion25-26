@@ -27,7 +27,7 @@ public class BusquedaBinaria {
 
             if (array[index] == numero) {
                 respuesta = index;
-                break; // Se encontró el número
+                break; 
             } 
             else if (array[index] < numero) {
                 umbral_inferior = index + 1;
