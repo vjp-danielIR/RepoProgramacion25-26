@@ -1,7 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+/* * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template */
 package tema8_ejercicio13y14;
 
 import java.util.InputMismatchException;
@@ -13,11 +11,8 @@ import java.util.Scanner;
  */
 public class TEMA8_Ejercicio13y14 {
 
-    /**
-     * @param args the command line arguments
-     */
+    // metodo principal que ejecuta el programa, crea dos alumnos de ejemplo y muestra un menu interactivo para gestionar un array de alumnos
     public static void main(String[] args) {
-
         System.out.println("=== EJERCICIO 13: CLASE ALUMNO ===\n");
 
         Alumno alumno1 = new Alumno();
@@ -50,7 +45,6 @@ public class TEMA8_Ejercicio13y14 {
             mostrarMenu();
             opcion = pedirOpcion();
             System.out.println("");
-
             switch (opcion) {
                 case 1:
                     rellenarAlumno(array);
@@ -71,74 +65,74 @@ public class TEMA8_Ejercicio13y14 {
                     System.out.println("Saliendo...");
                     break;
                 default:
-                    System.out.println("Por favor introduzca una opción válida\n");
+                    System.out.println("Por favor introduzca una opcion valida\n");
             }
         } while (opcion != 6);
     }
 
+    // metodo que pide al usuario una posicion del array y rellena ese alumno con nombre, edad y nota media introducidos por teclado
     public static void rellenarAlumno(Alumno[] array) {
         int posicion;
-
         do {
-            System.out.print("Intruduce la posición del alumno a rellenar: ");
+            System.out.print("Introduce la posicion del alumno a rellenar ");
             posicion = pedirOpcion();
-        } while (posicion < 0 || posicion > 4);
+        } while (posicion < 0 || posicion >= array.length);
 
-        System.out.print("Intruduce el nombre del alumno: ");
+        array[posicion] = new Alumno();
+        System.out.print("Introduce el nombre del alumno: ");
         array[posicion].setNombre(pedirString());
-
-        System.out.print("Intruduce la edad del alumno: ");
+        System.out.print("Introduce la edad del alumno: ");
         array[posicion].setEdad(pedirOpcion());
-
-        System.out.print("Intruduce  la media del alumno: ");
+        System.out.print("Introduce la media del alumno: ");
         array[posicion].setNotaMedia(pedirFloat());
-
-        System.out.println("DATOS DE " + array[posicion].getNombre() + " Recogido");
+        System.out.println("DATOS DE " + array[posicion].getNombre() + " recogidos\n");
     }
 
+    // metodo que muestra todos los alumnos del array cuya nota media sea igual o superior a la introducida por el usuario
     public static void mostrarPorMedia(Alumno[] array) {
         float media;
         boolean encontrado = false;
-
-        System.out.print("Por favor introduzca la nota media mínima: ");
+        System.out.print("Por favor introduzca la nota media minima: ");
         media = pedirFloat();
-
         for (int i = 0; i < array.length; i++) {
-            if (array[i].getNotaMedia() >= media) {
-                System.out.println(array[i].toString());
+            if (array[i] != null && array[i].getNotaMedia() >= media) {
+                System.out.println(array[i]);
                 encontrado = true;
             }
         }
-
         if (!encontrado) {
             System.out.println("No hay ningun alumno con una media igual superior");
         }
         System.out.println("");
     }
 
+    // metodo que busca en el array todos los alumnos cuyo nombre coincida con el introducido por el usuario y los muestra por pantalla
     public static void buscarAlumno(Alumno[] array) {
         System.out.print("Por favor introduzca el nombre que quiere buscar: ");
         String nombre = pedirString();
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].getNombre().equals(nombre)) {
+        int i = 0;
+        while (i < array.length) {
+            if (array[i] != null && array[i].getNombre().equalsIgnoreCase(nombre)) {
                 System.out.println(array[i].toString());
             }
+            i++;
         }
     }
 
+    // metodo que cuenta y muestra el numero de alumnos del array que tienen una nota media inferior a 5
     public static void mostrarSuspensos(Alumno[] array) {
         int suspensos = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i].getNotaMedia() < 5) {
+            if (array[i] != null && array[i].getNotaMedia() < 5) {
                 suspensos++;
             }
         }
-        System.out.println("El número de alumnos suspensos es " + suspensos);
+        System.out.println("El numero de alumnos suspensos es " + suspensos);
     }
 
+    // metodo que muestra por pantalla las opciones disponibles del menu principal
     public static void mostrarMenu() {
-        System.out.println("---- MENÚ ----");
+        System.out.println("---- MENU ----");
         System.out.println("1. Rellenar un alumno");
         System.out.println("2. Mostrar alumnos");
         System.out.println("3. Mostrar alumnos con una media mayor a la dada");
@@ -147,6 +141,7 @@ public class TEMA8_Ejercicio13y14 {
         System.out.println("6. Salir");
     }
 
+    // metodo que lee un numero entero introducido por el usuario por teclado y devuelve 0 si el valor no es valido
     public static int pedirOpcion() {
         int opcion;
         Scanner entrada = new Scanner(System.in);
@@ -159,16 +154,19 @@ public class TEMA8_Ejercicio13y14 {
         return opcion;
     }
 
+    // metodo que lee y devuelve una cadena de texto introducida por el usuario por teclado
     public static String pedirString() {
         Scanner entrada = new Scanner(System.in);
         return entrada.next();
     }
 
+    // metodo que lee y devuelve un numero decimal introducido por el usuario por teclado
     public static float pedirFloat() {
         Scanner entrada = new Scanner(System.in);
         return entrada.nextFloat();
     }
 
+    // metodo que muestra por pantalla los datos de todos los alumnos contenidos en el array
     public static void mostrarDatosAlumno(Alumno[] array) {
         System.out.println("Estos son todos los alumnos: ");
         for (int i = 0; i < array.length; i++) {
@@ -177,6 +175,7 @@ public class TEMA8_Ejercicio13y14 {
         System.out.println("");
     }
 
+    // metodo que muestra por pantalla los datos de un alumno concreto junto a una etiqueta identificativa
     public static void mostrarDatosAlumno(Alumno alumno, String etiqueta) {
         System.out.println(etiqueta + ": " + alumno.toString());
     }

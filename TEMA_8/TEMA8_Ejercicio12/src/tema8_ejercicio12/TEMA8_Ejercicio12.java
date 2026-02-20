@@ -16,6 +16,7 @@ public class TEMA8_Ejercicio12 {
     /**
      * @param args the command line arguments
      */
+    // metodo principal que crea dos muebles de ejemplo, los muestra y modifica, y luego gestiona un array de muebles mediante un menu interactivo
     public static void main(String[] args) {
         System.out.println("ESTO ES PARTE DEL EJERCICIO 11");
         //crear 2 objetos 
@@ -64,7 +65,6 @@ public class TEMA8_Ejercicio12 {
             System.out.println("2. Mostrar muebles");
             System.out.println("--------------------------------");
             System.out.println("3. Mostrar muebles por precio");
-           
 
             try {
                 opcion = entrada.nextInt();
@@ -73,10 +73,10 @@ public class TEMA8_Ejercicio12 {
                     case 1 -> rellenarMuebles(muebles);
                     case 2 -> mostrarMuebles(muebles);
                     case 3 -> mostrarMueblesPorPrecio(muebles);
-                    
-                    default -> System.out.println("Opcion no valida"); 
 
-                        }
+                    default -> System.out.println("Opcion no valida");
+
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Valor no valido");
                 entrada.nextLine();
@@ -85,6 +85,7 @@ public class TEMA8_Ejercicio12 {
         } while (opcion != 3);
     }
 
+    // metodo que recorre el array de muebles y asigna a cada posicion una descripcion y un precio predefinidos
     public static void rellenarMuebles(Muebles[] muebles) {
         for (int i = 0; i < muebles.length; i++) {
             System.out.println("---- Mueble " + (i + 1) + " ----");
@@ -124,15 +125,16 @@ public class TEMA8_Ejercicio12 {
             muebles[i].setDescripcion("Ey camaron todos los dias sale el sol camaron");
             muebles[i].setPrecio(20);
         }
-
     }
 
+    // metodo que recorre el array y muestra por pantalla la posicion y los datos de cada mueble
     public static void mostrarMuebles(Muebles[] muebles) {
         for (int i = 0; i < muebles.length; i++) {
             System.out.println("El array esta compuesto por: " + (i + 1) + muebles[i]);
         }
     }
 
+    // metodo que pide un precio al usuario y muestra todos los muebles del array cuyo precio sea inferior al introducido
     public static void mostrarMueblesPorPrecio(Muebles[] muebles) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce un precio para mostrar los muebles mas baratos");
