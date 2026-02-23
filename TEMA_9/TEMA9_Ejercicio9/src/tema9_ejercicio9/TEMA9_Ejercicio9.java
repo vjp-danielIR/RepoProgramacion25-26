@@ -40,7 +40,7 @@ public class TEMA9_Ejercicio9 {
     public static boolean validarContrasena(String usuario, String contrasena) {
         //  Mínimo 8 caracteres
         if (contrasena.length() < 8) {
-            System.out.println("Error: La contraseña debe tener al menos 6 caracteres");
+            System.out.println("La contraseña debe tener al menos 6 caracteres");
             return false;
         }
         
@@ -51,6 +51,6 @@ public class TEMA9_Ejercicio9 {
             return false;
         }
         
-        // Si pasa todas las validaciones
+        // Si todo esta correcto devolvera un true
         return true;
     }}
