@@ -66,6 +66,7 @@ public class Coleccion_Figuras {
             figuras[i][0] = pedirNombre();
             figuras[i][1] = String.valueOf(pedirValor());  //cambiar el tipo de double a string
             figuras[i][2] = pedirColeccion();
+          
         }
     }
 
