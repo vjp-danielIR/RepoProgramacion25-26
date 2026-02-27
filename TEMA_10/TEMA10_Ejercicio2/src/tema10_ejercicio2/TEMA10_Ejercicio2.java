@@ -16,7 +16,7 @@ public class TEMA10_Ejercicio2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Integer> numeros = new ArrayList<Integer>(); //integer es la forma de poner un int 
+        ArrayList<Integer> numeros = new ArrayList<>(); //integer es la forma de poner un int 
         rellenarLista(numeros); //rellena el array de numeros
         mostrarLista(numeros); //al terminar de rellenarlos los mostrara
         //y despues calculara el numero mas grande  el menor y la suma de todos los numeros
@@ -40,7 +40,7 @@ public class TEMA10_Ejercicio2 {
 
     // Muestra por pantalla todos los elementos de la lista
     public static void mostrarLista(ArrayList<Integer> numeros) {
-        System.out.println("===== LISTA DE NUMEROS =====");
+        System.out.println("===== LISTA DE NÚMEROS =====");
         for (int i = 0; i < numeros.size(); i++) { // size() devuelve el numero de elementos que tiene la lista
 
             System.out.println((i + 1) + ". " + numeros.get(i));
