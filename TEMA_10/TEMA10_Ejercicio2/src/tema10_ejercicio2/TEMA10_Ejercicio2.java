@@ -16,7 +16,7 @@ public class TEMA10_Ejercicio2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Integer> numeros = new ArrayList<>(); //integer es ula forma de poner un int 
+        ArrayList<Integer> numeros = new ArrayList<Integer>(); //integer es la forma de poner un int 
         rellenarLista(numeros); //rellena el array de numeros
         mostrarLista(numeros); //al terminar de rellenarlos los mostrara
         //y despues calculara el numero mas grande  el menor y la suma de todos los numeros

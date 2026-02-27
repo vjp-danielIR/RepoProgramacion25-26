@@ -8,7 +8,7 @@ import java.util.*; //asi nos ahorramos el escribir para importar el Scanner y e
 
 /**
  *
- * @author alumno
+ * @author daniel
  */
 public class TEMA10_Ejercicio1 {
 
@@ -27,15 +27,15 @@ public class TEMA10_Ejercicio1 {
     //este metodo es para preguntarle al usuario si quiere añadir a una persona y le pregunta el nombre enc asao de que si
     public static void rellenarNombres(ArrayList<Persona> personas) {
         Scanner entrada = new Scanner(System.in);
-        String resp;
-        //si el usuario quiere añadir a alguien
+        String resp,nombre;
+        
         do {
             System.out.println("¿Quieres añadir una persona? (s/n): ");
             resp = entrada.nextLine();
 
             if (resp.equalsIgnoreCase("s")) { //en caso de la respuesta sea s ignorando que sea mayuscula
-                System.out.println("Dime el nombre de la persona: "); //le preguntaremos el nombre
-                String nombre = entrada.nextLine(); // lo guardaremos
+                System.out.println("Dime el nombre de la persona: "); 
+                nombre = entrada.nextLine();
                 personas.add(new Persona(nombre)); //y creaermos una nueva persona con ese nombre
             }
             //mientras el usuario ponga que s no saldremos del bucle
@@ -44,7 +44,7 @@ public class TEMA10_Ejercicio1 {
 
     //Metodo que muestra los nombres de las personas creadas 
     public static void mostrarLista(ArrayList<Persona> personas) {
-        System.out.println("\n===== LISTA DE PERSONAS =====");
+        System.out.println("===== LISTA DE PERSONAS =====");
         for (int i = 0; i < personas.size(); i++) {
             System.out.println(personas.get(i).getNombre());
         }
