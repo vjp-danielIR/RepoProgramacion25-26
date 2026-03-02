@@ -19,7 +19,7 @@ public class Coleccion_Figuras {
 
         Scanner entrada = new Scanner(System.in);
         // Matriz
-        String[][] figuras = new String[9][3];
+        String[][] figura = new String[3][3];
         int opcion = 0;
 
         do {
@@ -40,12 +40,12 @@ public class Coleccion_Figuras {
                 opcion = entrada.nextInt();
                 switch (opcion) {
                     case 1 ->
-                        rellenarMatriz(figuras);
+                        rellenarMatriz(figura);
 
                     case 2 ->
-                        mostrarColeccion(figuras);
+                        mostrarColeccion(figura);
                     case 3 ->
-                        mostrarMasValiosa(figuras);
+                        mostrarMasValiosa(figura);
                     case 4 ->
                         System.out.println("Saliendo...");
                     default ->
@@ -93,7 +93,7 @@ public class Coleccion_Figuras {
         return figura.nextLine();
     }
 
-    // mostrar todas las figuras de una coleccion determinada 
+    // mostrar todas las figura de una coleccion determinada 
     public static void mostrarColeccion(String[][] figuras) {
         Scanner entrada = new Scanner(System.in);
 
