@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author alumno
+ * @author daniel
  */
 public class TEMA10_Ejercicio13 {
 
@@ -17,7 +17,7 @@ public class TEMA10_Ejercicio13 {
      */
     public static void main(String[] args) {
         ArrayList<Ventas> ventas = new ArrayList<>();
-          String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
         int opcion = 0;
@@ -41,12 +41,18 @@ public class TEMA10_Ejercicio13 {
                 opcion = pedirOpcion();
 
                 switch (opcion) {
-                    case 1 -> introducirVentas(ventas,meses);
-                    case 2 -> mostrarVentas(ventas, meses);
-                    case 3 -> mostrarSumaTotal(ventas, meses);
-                    case 4 -> mostrarVentasMesesA(ventas, meses);
-                    case 5 -> mesMasVentas(ventas, meses);
-                    case 6 -> System.out.println("Saliendo del programa....");
+                    case 1 ->
+                        introducirVentas(ventas, meses);
+                    case 2 ->
+                        mostrarVentas(ventas, meses);
+                    case 3 ->
+                        mostrarSumaTotal(ventas, meses);
+                    case 4 ->
+                        mostrarVentasMesesA(ventas, meses);
+                    case 5 ->
+                        mesMasVentas(ventas, meses);
+                    case 6 ->
+                        System.out.println("Saliendo del programa....");
                     default ->
                         System.out.println("los valores son entre 1 y 6, valor no valido");
                 }
@@ -58,6 +64,7 @@ public class TEMA10_Ejercicio13 {
         } while (opcion != 6);
     }
 
+    // Pide al usuario que elija una opción del menú
     public static int pedirOpcion() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("");
@@ -66,38 +73,70 @@ public class TEMA10_Ejercicio13 {
         return opcion;
     }
 
+    // Pide al usuario que introduzca las ventas de cada mes del año
     public static void introducirVentas(ArrayList<Ventas> ventas, String[] meses) {
-      for (int i = 0; i < meses.length; i++) {
-          Scanner entrada = new Scanner(System.in);
+        for (int i = 0; i < meses.length; i++) {
+            Scanner entrada = new Scanner(System.in);
 
-       
             System.out.println("Dime las ventas del mes " + meses[i] + ":");
             int venta = entrada.nextInt();
-             ventas.add(new Ventas(meses[i], venta));
-            
+            ventas.add(new Ventas(meses[i], venta));
+
         }
-        
+
     }
-          
+
+    // Muestra las ventas de todos los meses que se han introducido
     public static void mostrarVentas(ArrayList<Ventas> ventas, String[] meses) {
-     
-        for (Ventas venta : ventas) {
-            System.out.println(venta.getNombreMes() + ": " + venta.getVentasCochesMes());
+
+        for (int i = 0; i < ventas.size(); i++) {
+            System.out.println(ventas.get(i).getNombreMes() + ": " + ventas.get(i).getVentasCochesMes());
         }
-}
+    }
 
+    // Calcula y muestra la suma total de ventas del año
     public static void mostrarSumaTotal(ArrayList<Ventas> ventas, String[] meses) {
-    
-    
-    
+        double suma = 0;
+
+        for (int i = 0; i < ventas.size(); i++) {
+            suma += ventas.get(i).getVentasCochesMes();
+        }
+
+        System.out.println("La suma total de ventas del año es: " + suma);
+
     }
 
-    private static void mostrarVentasMesesA(ArrayList<Ventas> ventas, String[] meses) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Muestra solo las ventas de los meses que empiezan por A (Abril y Agosto)
+    public static void mostrarVentasMesesA(ArrayList<Ventas> ventas, String[] meses) {
+        boolean hayMeses = false;
+
+        for (int i = 0; i < ventas.size(); i++) {
+            String nombreMes = ventas.get(i).getNombreMes();
+
+            // Comprobamos si la primera letra es 'A'
+            if (nombreMes.charAt(0) == 'A') {
+                System.out.println(nombreMes + ": " + ventas.get(i).getVentasCochesMes());
+                hayMeses = true;
+            }
+        }
+
+        if (!hayMeses) {
+            System.out.println("No hay meses que empiecen por 'A'.");
+        }
     }
 
-    private static void mesMasVentas(ArrayList<Ventas> ventas, String[] meses) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    // Busca y muestra cuál es el mes con más ventas
+    public static void mesMasVentas(ArrayList<Ventas> ventas, String[] meses) {
+        Ventas mayor = ventas.get(0);
 
+        for (int i = 0; i < ventas.size(); i++) {
+            if (ventas.get(i).getVentasCochesMes() > mayor.getVentasCochesMes()) {
+                mayor = ventas.get(i);
+            }
+        }
+
+        System.out.println("El mes con más ventas es "
+                + mayor.getNombreMes() + " con "
+                + mayor.getVentasCochesMes() + " ventas.");
+    }
 }
