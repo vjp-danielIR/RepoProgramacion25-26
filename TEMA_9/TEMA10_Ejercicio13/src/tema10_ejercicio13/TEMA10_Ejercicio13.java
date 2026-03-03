@@ -17,8 +17,7 @@ public class TEMA10_Ejercicio13 {
      */
     public static void main(String[] args) {
         ArrayList<Ventas> ventas = new ArrayList<>();
-        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
         int opcion = 0;
         do {
@@ -135,8 +134,6 @@ public class TEMA10_Ejercicio13 {
             }
         }
 
-        System.out.println("El mes con más ventas es "
-                + mayor.getNombreMes() + " con "
-                + mayor.getVentasCochesMes() + " ventas.");
+        System.out.println("El mes con más ventas es " + mayor.getNombreMes() + " con " + mayor.getVentasCochesMes() + " ventas.");
     }
 }
