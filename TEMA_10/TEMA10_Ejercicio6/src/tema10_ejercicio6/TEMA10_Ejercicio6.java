@@ -85,7 +85,7 @@ public class TEMA10_Ejercicio6 {
 
             ventas.add(venta);
         }
-        System.out.println("Ventas introducidas correctamente.");
+       
     }
     //Metodo que muestra las ventas anterior mente introducidas
     public static void mostrarVentas(ArrayList<Integer> ventas, String[] meses) {
