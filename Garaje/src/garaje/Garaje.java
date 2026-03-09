@@ -174,7 +174,7 @@ public class Garaje {
         String[][] plazas = new String[3][3];
 
         for (int i = 0; i < plazas.length; i++) {
-            for (int j = i + 1; j < plazas[0].length; j++) {
+            for (int j = 0; j < plazas[0].length; j++) {
                 String matricula = coche[i].getMatricula();
                 String nomTitular = coche[i].getNomTitular();
                 plazas[i][j] = matricula;
