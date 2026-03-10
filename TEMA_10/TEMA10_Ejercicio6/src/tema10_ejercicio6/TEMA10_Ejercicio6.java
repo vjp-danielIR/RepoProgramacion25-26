@@ -67,6 +67,7 @@ public class TEMA10_Ejercicio6 {
 
         } while (opcion != 7);
     }
+
     //Metodo para pedirle una opcion al usuario sobre el menu
     public static int pedirOpcion() {
         Scanner entrada = new Scanner(System.in);
@@ -75,6 +76,7 @@ public class TEMA10_Ejercicio6 {
         entrada.nextLine();
         return opcion;
     }
+
     //Metodo para introducir las ventas de los cohces 
     public static void introducirVentas(ArrayList<Integer> ventas, String[] meses) {
         Scanner entrada = new Scanner(System.in);
@@ -85,26 +87,34 @@ public class TEMA10_Ejercicio6 {
 
             ventas.add(venta);
         }
-       
+
     }
+
     //Metodo que muestra las ventas anterior mente introducidas
     public static void mostrarVentas(ArrayList<Integer> ventas, String[] meses) {
-        if(ventas.isEmpty()){
+        if (ventas.isEmpty()) {
             System.out.println("Aun no se han introducido datos de ventas");
-        
-        }else{
-        for (int i = 0; i < ventas.size(); i++) {
-            System.out.println("Las ventas del mes: " + meses[i] + " fueron: " + ventas.get(i));
 
-        }
+        } else {
+            for (int i = 0; i < ventas.size(); i++) {
+                System.out.println("Las ventas del mes: " + meses[i] + " fueron: " + ventas.get(i));
+
+            }
         }
     }
+
     //Metodo que muestra todas las ventas al reves es decir desde DICIEMBRE HASTA ENERO
     public static void mostrarVentasAlReves(ArrayList<Integer> ventas, String[] meses) {
-        for (int i = ventas.size() - 1; i >= 0; i--) {
-            System.out.println("Mes: " + meses[i] + " - Ventas: " + ventas.get(i));
+        if (ventas.isEmpty()) {
+            System.out.println("Aun no se han introducido datos de ventas");
+
+        } else {
+            for (int i = ventas.size() - 1; i >= 0; i--) {
+                System.out.println("Mes: " + meses[i] + " - Ventas: " + ventas.get(i));
+            }
         }
     }
+
     //Metodo que suma las ventas de todo el año 
     public static void sumaTotalAño(ArrayList<Integer> ventas, String[] meses) {
         int sumaTotal = 0;
@@ -116,7 +126,7 @@ public class TEMA10_Ejercicio6 {
         System.out.println("Total de las ventas: " + sumaTotal + "€");
         System.out.println("");
     }
-    
+
     //metodo que muestra las ventas de todos los meses que contengan una a en su nombre
     public static void ventasTotalMesesA(ArrayList<Integer> ventas, String[] meses) {
         int sumaTotal = 0;
@@ -148,6 +158,13 @@ public class TEMA10_Ejercicio6 {
             }
         }
         System.out.println("la venta mas grande fue del mes: " + mes + " y fue con: " + maxVentas);
+        for (int i = 0; i < ventas.size(); i++) {
+            if (maxVentas == ventas.get(i)) {
+
+                System.out.println("los meses: " + meses[i] + "tambien cumplen con las ventas mas grandes con: " + ventas.get(i));
+            }
+
+        }
 
     }
 }

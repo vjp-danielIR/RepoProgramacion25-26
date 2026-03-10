@@ -19,6 +19,7 @@ public class Garaje {
         //vector de objeto coche
         Coches[] coche = new Coches[9];
         int opcion = 0;
+        int pos=0;
         //menu con control de expeciones
         do {
             try {
@@ -50,8 +51,9 @@ public class Garaje {
                     case 4 ->
                         nombreTitulares(coche);
 
-                    case 5 ->
-                        buscarMatricula(coche);
+                    case 5 ->  System.out.println(" la matricula buscada esta en la posicion: " + buscarMatricula(coche)) ;
+                    
+
                     case 6 ->
                         estadoPlazas(coche);
                     case 7 ->
@@ -131,16 +133,18 @@ public class Garaje {
         System.out.println("Dime el nombre del titular a buscar:");
         String nombre = entrada.next();
         boolean encontrado = false;
-
+        String concatenar = "";
         for (int i = 0; i < coche.length; i++) {
             if (coche[i] != null && coche[i].getNomTitular().startsWith(nombre)) {
-                System.out.println("Plaza " + i + ": " + coche[i].getNomTitular());
+                concatenar = coche[i].getNomTitular() + concatenar + "#";
                 encontrado = true;
             }
         }
 
         if (!encontrado) {
             System.out.println("Ningun titular encontrado con ese nombre");
+        } else {
+            System.out.println(concatenar);
         }
     }
 
@@ -153,15 +157,15 @@ public class Garaje {
     }
 
     //metodo que busca la matricula que el usuario le pide
-    public static void buscarMatricula(Coches[] coche) {
+    public static int buscarMatricula(Coches[] coche) {
         boolean encont = false;
         String matricula = pedirMatricula();
-
-        for (int i = 0; i < coche.length; i++) {
+        int i = 0;
+        int pos = -1;
+        while (i < coche.length && !encont) {
             if (coche[i] != null && coche[i].getMatricula().equalsIgnoreCase(matricula)) {
                 encont = true;
-                System.out.println("El coche con la matricula: " + coche[i].getMatricula()
-                        + " esta en la posicion: " + i);
+                pos = i;
 
             }
         }
@@ -169,27 +173,30 @@ public class Garaje {
         if (!encont) {
             System.out.println("Matricula no encontrada");
         }
+        return pos;
     }
 
     //metodo que muestra las plazas libres y ocupadas 
     public static void estadoPlazas(Coches[] coche) {
-        String[][] plazas = new String[3][3];
-        int k = 0;
+        char[][] plazas = new char[3][3];
+        int k, fila, columna;
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (coche[k] == null) {
-                    plazas[i][j] = " L ";
-                } else {
-                    plazas[i][j] = " X ";
-                }
-                k++;
+        for (int i = 0; i < coche.length; i++) {
+            fila = i / 3;
+            columna = i % 3;
+
+            if (coche[i] == null) {
+                plazas[fila][columna] = 'L';
+            } else {
+                plazas[fila][columna] = 'X';
             }
+
         }
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("|" + plazas[i][0] + "|" + plazas[i][1] + "|" + plazas[i][2] + "|");
-
+            for (int j = 0; j < 3; j++) {
+                System.out.println("[" + plazas[i][j] + "]");
+            }
         }
     }
 
