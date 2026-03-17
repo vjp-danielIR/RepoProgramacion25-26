@@ -51,6 +51,11 @@ public class TEMA11_Ejercicio3 {
     }
 
     // Aparca un autobús en la posición indicada si está libre y es válida
+
+    /**
+     *
+     * @param espacio
+     */
     public static void aparcar(Autobus[] espacio) {
         System.out.print("Posición (0-5): ");
         int pos = pedirInt();
@@ -81,6 +86,11 @@ public class TEMA11_Ejercicio3 {
     }
 
     // Muestra todas las dársenas que no tienen autobús aparcado
+
+    /**
+     *
+     * @param espacio
+     */
     public static void mostrarLibres(Autobus[] espacio) {
         System.out.println("----Espacios libres----");
         boolean hayLibres = false;
@@ -96,15 +106,21 @@ public class TEMA11_Ejercicio3 {
     }
 
     // Busca un autobús por matrícula y muestra toda su información
+
+    /**
+     *
+     * @param espacio
+     */
     public static void buscarAutobus(Autobus[] espacio) {
         System.out.print(" -Matrícula a buscar: ");
         String matricula = pedirString();
         int i = 0;
         boolean encontrado = false;
+        System.out.println("");
         while (encontrado != false) {
             if (espacio[i] != null && espacio[i].getMatricula().equalsIgnoreCase(matricula)) {
                 System.out.println(espacio[i]);
-
+                encontrado=true;
             } else {
                 i++;
             }
@@ -114,6 +130,11 @@ public class TEMA11_Ejercicio3 {
     }
 
     // Busca un conductor por DNI y muestra la matrícula del autobús que tiene asignado
+
+    /**
+     *
+     * @param espacio
+     */
     public static void buscarConductor(Autobus[] espacio) {
         System.out.print(" DNI del conductor: ");
         String dni = pedirString();
@@ -122,7 +143,7 @@ public class TEMA11_Ejercicio3 {
         while (encontrado != false) {
             if (espacio[i] != null && espacio[i].getConductores().containsKey(dni)) {
                 System.out.println(" El conductor trabaja en el autobús: " + espacio[i].getMatricula());
-
+                encontrado=true;
             } else {
                 i++;
             }
