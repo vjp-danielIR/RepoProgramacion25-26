@@ -20,19 +20,18 @@ public class TEMA9_Ejercicio5 {
         String[] dias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
         String[] posiciones = {"primer", "segundo", "tercer", "cuarto", "quinto", "sexto", "séptimo"};
 
-        Scanner entrada = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce un día de la semana: ");
-        String diaIntroducido = entrada.nextLine();
-         boolean encontrado = false;
-         int i = 0;
+        String diaIntroducido = scanner.nextLine().trim();
 
-       while (i < dias.length && !encontrado) {
-          if (dias[i].equalsIgnoreCase(diaIntroducido)) {
-          System.out.println("Es el " + posiciones[i] + " día de la semana.");
-           encontrado = true;
-          }
-         i++;
-       }
+        boolean encontrado = false;
+
+        for (int i = 0; i < dias.length; i++) {
+            if (dias[i].equalsIgnoreCase(diaIntroducido)) {
+                System.out.println("Es el " + posiciones[i] + " día de la semana.");
+                encontrado = true;
+                break;
+            }
         }
 
         if (!encontrado) {
