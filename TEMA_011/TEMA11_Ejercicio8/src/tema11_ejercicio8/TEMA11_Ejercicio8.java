@@ -2,55 +2,60 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package tema11_ejercicio6;
+package tema11_ejercicio8;
 
 import java.util.*;
 
 /**
  *
- * @author alumno
+ * @author Daniel_Iglesias
  */
-public class TEMA11_Ejercicio6 {
+public class TEMA11_Ejercicio8 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int opcion = 0;
-        Campania campania = new Campania("Campaña Principal");
+      int opcion = 0;
+        Ciudades ciudad = new Ciudades();
 
         do {
             try {
                 System.out.println("\n===== Menu =====");
-                System.out.println("1. Añadir Donacion");
-                System.out.println("2. Mostrar Donaciones");
-                System.out.println("3. Mostrar donaciones por nombre de donante");
-                System.out.println("4. Mostrar número de donaciones");
-                System.out.println("5. Mostrar total dinero recaudado");
-                System.out.println("6. Ordenar donaciones ");
-                System.out.println("7. Salir del Programa ");
+                System.out.println("1. Añadir Ciudad");
+                System.out.println("-----------------------");
+                System.out.println("2. Mostrar ciudad con sus sedes");
+                System.out.println("--------------------------------");
+                System.out.println("3. Sedes que superan los ingresos de la media");
+                System.out.println("---------------------------------------------");
+                System.out.println("4. Buscar sede por nombre");
+                System.out.println("-----------------------------");
+                System.out.println("5. Añadir Sede");
+                System.out.println("-----------------");
+                System.out.println("6. Mostrar todas las sedes de mayor a menor");
+                System.out.println("----------------------------------------------");
+                System.out.println("7. Salir del Programa...");
 
                 opcion = pedirInt("¿Que opcion desea?");
 
                 switch (opcion) {
                     case 1:
-
-                        campania.añadirDonacion(pedirString("Nombre del donante:"), pedirDouble("Cantidad donada:"));
+                        break;
 
                     case 2:
-                        campania.mostrarDonaciones();
+                        break;
 
                     case 3:
-                        campania.mostrarDonacionesNombre(pedirString("Nombre del donante buscado:"));
+                        break;
 
                     case 4:
-                        campania.mostrarNumeroDonaciones();
+                        break;
 
                     case 5:
-                        campania.mostrarTotalRecaudado();
+                        break;
 
                     case 6:
-                        campania.ordenarDonaciones();
+                        break;
 
                     case 7:
                         System.out.println("Saliendo...");
@@ -58,6 +63,7 @@ public class TEMA11_Ejercicio6 {
 
                     default:
                         System.out.println("Opción no válida.");
+                        break;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Valor no válido.");

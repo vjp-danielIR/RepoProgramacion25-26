@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tema11_ejercicio6;
+package tema11_ejercicio7;
 
 /**
  *
  * @author alumno
  */
 public class Donacion {
-    //atributos
    private String nombre;
     private double cantidad;
 
@@ -41,7 +40,6 @@ public class Donacion {
         this.cantidad = cantidad;
     }
 
-    //metodo que muestra objeto
     @Override
     public String toString() {
         return "Donacion{" + "nombre=" + nombre + ", cantidad=" + cantidad + '}';

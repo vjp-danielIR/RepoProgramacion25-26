@@ -11,7 +11,7 @@ import java.util.*;
  * @author alumno
  */
 public class Campania {
-
+    //atributos
     private String nombre;
     private Set<Donacion> donaciones;
 
@@ -103,19 +103,7 @@ public class Campania {
     // Metodo que ordena las donaciones de mayor a menor
     public void ordenarDonaciones() {
         ArrayList<Donacion> ordenadas = new ArrayList<>();
-        for (Donacion donacion : donaciones) {
-            boolean insertado = false;
-            for (int i = 0; i < ordenadas.size(); i++) {
-                if (donacion.getCantidad() > ordenadas.get(i).getCantidad()) {
-                    ordenadas.add(i, donacion);
-                    insertado = true;
-
-                }
-            }
-            if (!insertado) {
-                ordenadas.add(donacion);
-            }
-        }
+       ordenadas.sort((donacion1,donacion2)-> Double.compare(donacion1.getCantidad(), donacion2.getCantidad()));
         System.out.println("--- Ordenadas de mayor a menor ---");
         for (Donacion donacion : ordenadas) {
             System.out.println(donacion);
