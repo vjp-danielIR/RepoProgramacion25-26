@@ -195,7 +195,7 @@ public static void añadirSede(ArrayList<Ciudades> ciudades) {
     System.out.println("Ciudad no encontrada");
 }
 
- public void mostrarSedesOrdenadas(ArrayList<Ciudades> ciudades) {
+ public static void mostrarSedesOrdenadas(ArrayList<Ciudades> ciudades) {
         ArrayList<Sedes> ordenadas = new ArrayList<>();
       ordenadas.sort((ciudad1,ciudad2) -> Double.compare(ciudad1.getIngresos(), ciudad2.getIngresos()));
         System.out.println("\n--- Ordenadas de mayor a menor ---");

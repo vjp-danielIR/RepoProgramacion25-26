@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package javaapplication189;
+package tema11_ejercicio9;
 
 /**
  *
- * @author Daniel_Iglesias <your.name at your.org>
+ * @author Daniel_Iglesias
  */
-public class JavaApplication189 {
+public class TEMA11_Ejercicio9 {
 
     /**
      * @param args the command line arguments
