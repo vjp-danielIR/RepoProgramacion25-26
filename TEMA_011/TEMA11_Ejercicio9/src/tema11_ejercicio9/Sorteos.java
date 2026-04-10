@@ -6,7 +6,6 @@ package tema11_ejercicio9;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.TreeMap;
 
 /**
  *
@@ -15,37 +14,34 @@ import java.util.TreeMap;
 public class Sorteos {
 
     // Atributos
-    private TreeMap<Integer, LocalDate> fecha;
+    private LocalDate fecha;
     private int[] numerosGanadores = new int[4];
 
     // constructor por defecto
+    
     public Sorteos() {
-        this.fecha = new TreeMap<>();
-        this.numerosGanadores = generarNumeros();
+        this.fecha = LocalDate.EPOCH;
+        this.numerosGanadores = new int[4];
+                for (int i = 0; i < numerosGanadores.length; i++) {
+            this.numerosGanadores[i] = (int) (Math.random() * 99 + 1);
+        }
     }
 
     // constructor parametrizado
     public Sorteos(LocalDate fecha, int[] numerosGanadores) {
-        this.fecha = new TreeMap<>();
+        this.fecha = fecha;
         this.numerosGanadores = numerosGanadores;
     }
 
-    // metodo que genera 4 numeros aleatorios entre el 1 y 100
-    private int[] generarNumeros() {
-        int[] aux = new int[4]; // Creamos un array temporal
-        for (int i = 0; i < aux.length; i++) {
-            aux[i] = (int) (Math.random() * 100) + 1;
-        }
-        return aux;
-    }
+    
 
     // Getters y Setters 
-    public TreeMap<Integer, LocalDate> getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha, Integer id) {
-        this.fecha.put(id, fecha);
+    public void setFecha(LocalDate fecha) {
+        this.fecha=fecha;
     }
 
     public int[] getNumerosGanadores() {

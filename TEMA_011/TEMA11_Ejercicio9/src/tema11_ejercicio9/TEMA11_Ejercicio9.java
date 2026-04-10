@@ -18,48 +18,56 @@ public class TEMA11_Ejercicio9 {
      */
     public static void main(String[] args) {
         int opcion = 0;
-        ArrayList<Sorteos> sorteo = new ArrayList<>();
+        TreeMap<LocalDate, Sorteos> sorteo = new TreeMap<>();
 
         do {
+            System.out.println("\n===== Menu =====");
+            System.out.println("-------------------");
+            System.out.println("1. Realizar sorteo");
+            System.out.println("-----------------");
+            System.out.println("2. Repetir sorteo");
+            System.out.println("-------------------");
+            System.out.println("3. Mostrar sorteo del mes actual");
+            System.out.println("---------------------------------");
+            System.out.println("4. Mostrar sorteo por fecha");
+            System.out.println("---------------------------");
+            System.out.println("5. Realizar sorteo por fecha");
+            System.out.println("------------------------------");
+            System.out.println("6. Mostrar todos los sorteos");
+            System.out.println("----------------------------");
+            System.out.println("7. Salir del programa...");
             try {
-                System.out.println("\n===== Menu =====");
-                System.out.println("-------------------");
-                System.out.println("1. Realizar sorteo");
-                System.out.println("-----------------");
-                System.out.println("2. Repetir sorteo");
-                System.out.println("-------------------");
-                System.out.println("3. Mostrar sorteo del mes actual");
-                System.out.println("---------------------------------");
-                System.out.println("4. Mostrar sorteo por fecha");
-                System.out.println("---------------------------");
-                System.out.println("5. Realizar sorteo por fecha");
-                System.out.println("------------------------------");
-                System.out.println("6. Mostrar todos los sorteos");
-                System.out.println("----------------------------");
-                System.out.println("7. Salir del programa...");
-
-                switch (opcion) {
-
-                    case 1 -> realizarSortro(sorteo);
-
-                    case 2 -> repetirSorteo( sorteo);
-
-                    case 3 -> mostrarSorteoActualMes(sorteo);
-
-                    case 4 -> mostrarSorteoFecha(sorteo);
-
-                    case 5 -> realizarSorteoFecha(sorteo);
-
-                    case 6 -> mostrarSorteos(sorteo);
-
-                    case 7 -> System.out.println("Saliendo...");
-                }
+                opcion = pedirInt("Dime una opcion");
 
             } catch (InputMismatchException e) {
                 System.out.println("Valor no válido.");
             }
 
+            switch (opcion) {
+
+                case 1 ->
+                    realizarSortro(sorteo);
+
+                case 2 ->
+                    repetirSorteo(sorteo);
+
+                case 3 ->
+                    mostrarSorteoActualMes(sorteo);
+
+                case 4 ->
+                    mostrarSorteoFecha(sorteo);
+
+                case 5 ->
+                    realizarSorteoFecha(sorteo);
+
+                case 6 ->
+                    mostrarSorteos(sorteo);
+
+                case 7 ->
+                    System.out.println("Saliendo...");
+            }
         } while (opcion != 7);
+
     }
 
     public static int pedirInt(String texto) {
@@ -80,45 +88,56 @@ public class TEMA11_Ejercicio9 {
         return entrada.nextLine();
     }
 
-    public static void realizarSortro(ArrayList<Sorteos> sorteo) {
+    public static void realizarSortro(TreeMap<LocalDate, Sorteos> sorteo) {
+        System.out.println("Realizando sorteo.....");
+
+        Sorteos nuevo = new Sorteos();
+        LocalDate hoy = LocalDate.now();
+        nuevo.setFecha(hoy);
+        System.out.println("");
+        sorteo.put(hoy, nuevo);
+        System.out.println("Sorteo realizado con exito...");
+        System.out.println("El dia del sorteo sera:" + nuevo.getFecha());
+        System.out.println("Tu numero ganador es: " + Arrays.toString(nuevo.getNumerosGanadores()));
+    }
+
+    public static void repetirSorteo(TreeMap<LocalDate, Sorteos> sorteo) {
+        LocalDate hoy = LocalDate.now();
+        sorteo.remove(hoy);
+        Sorteos nuevo = new Sorteos();
+        nuevo.setFecha(hoy);
+        sorteo.put(hoy, nuevo);
+        System.out.println("Sorteo repetido con éxito.");
+         System.out.println("El dia del sorteo sera:" + nuevo.getFecha());
+        System.out.println("Tu numero ganador es: " + Arrays.toString(nuevo.getNumerosGanadores()));
+    }
+
+    public static void mostrarSorteoActualMes(TreeMap<LocalDate, Sorteos> sorteo) {
         
-        System.out.println("realizando sorteo.....");
-        Sorteos nuevo= new Sorteos();
-        nuevo.setFecha( LocalDate.now() , Integer.SIZE);
-    
-        System.out.println("Sorteo Realizado con exito");
     }
 
-    public static void repetirSorteo(ArrayList<Sorteos> sorteo) {
-    
-    
-    
-    
+    public static void mostrarSorteoFecha(TreeMap<LocalDate, Sorteos> sorteo) {
+
+        boolean encontrado = false;
+
+        int dia = pedirInt("Introduce el día: ");
+        int mes = pedirInt("Introduce el mes: ");
+        int año = pedirInt("Introduce el año: ");
+        LocalDate fecha = LocalDate.of(año, mes, dia);
+        int i = 0;
+        while (!encontrado) {
+
+        }
     }
 
-    public static void mostrarSorteoActualMes(ArrayList<Sorteos> sorteo) {
-    
-    
-    
+    public static void realizarSorteoFecha(TreeMap<LocalDate, Sorteos> sorteo) {
+
     }
 
-    public static void mostrarSorteoFecha(ArrayList<Sorteos> sorteo) {
-
-    
-    
-    }
-
-    public static void realizarSorteoFecha(ArrayList<Sorteos> sorteo) {
-   
-    
-    
-    }
-
-    public static void mostrarSorteos(ArrayList<Sorteos> sorteo) {
-    
-    
-    
-    
+    public static void mostrarSorteos(TreeMap<LocalDate, Sorteos> sorteo) {
+        for (int i = 0; i < sorteo.size(); i++) {
+            System.out.println(sorteo.get(i));
+        }
     }
 
 }
