@@ -131,7 +131,18 @@ public class TEMA11_Ejercicio9 {
     }
 
     public static void realizarSorteoFecha(TreeMap<LocalDate, Sorteos> sorteo) {
-
+       Sorteo sorteos;
+        if  (sorteos.containsKey(fecha)){
+            System.out.println("El día " + fecha + "  ya tiene un sorteo realizado");
+        }
+        else{
+            //Creamos un sorteo con la fecha recibida por parámetros y números ganadores entre 1 y 100.
+            nSorteo = new Sorteo(fecha);  
+            mSorteos.put(fecha, sorteos);
+            //Mostramos por pantalla el sorteo 
+            System.out.println(sorteos);
+        }
+    }
     }
 
     public static void mostrarSorteos(TreeMap<LocalDate, Sorteos> sorteo) {
