@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -6,47 +7,33 @@ package tema10_ejercicio14;
 
 /**
  *
- * @author alumno
+ * @author danie
  */
 public class Asignatura {
-    
-    //atributos privados
-    private String nombre;
-    private double nota;
-    
-    //constructor por defecto
-     Asignatura() {
-        this.nombre = "";
-        this.nota = 0.0;
-    }
-     //constructor parametrizado
-    Asignatura(String nombre, float nota) {
-        this.nombre = nombre;
-        this.nota = nota;
+      private String nombreAsignatura;
+    private float notaAsignatura;
+
+    // Constructor por defecto
+    public Asignatura() {
+        this.nombreAsignatura = "";
+        this.notaAsignatura = 0.0f;
     }
 
-    //getter y setters
-    public String getNombre() {
-        return nombre;
+    // Constructor parametrizado
+    public Asignatura(String nombreAsignatura, float notaAsignatura) {
+        this.nombreAsignatura = nombreAsignatura;
+        this.notaAsignatura = notaAsignatura;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    // Getters y Setters
+    public String getNombreAsignatura() { return nombreAsignatura; }
+    public void setNombreAsignatura(String nombreAsignatura) { this.nombreAsignatura = nombreAsignatura; }
 
-    public double getNota() {
-        return nota;
-    }
+    public float getNotaAsignatura() { return notaAsignatura; }
+    public void setNotaAsignatura(float notaAsignatura) { this.notaAsignatura = notaAsignatura; }
 
-    public void setNota(double nota) {
-        this.nota = nota;
-    }
-    
-    //metodo to string para mostrar el objeto
     @Override
     public String toString() {
-        return "Asignatura{" + "nombre=" + nombre + ", nota=" + nota + '}';
+        return nombreAsignatura + ": " + notaAsignatura;
     }
-    
-    
 }
