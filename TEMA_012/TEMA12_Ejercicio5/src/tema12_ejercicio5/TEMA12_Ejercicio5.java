@@ -28,19 +28,12 @@ public class TEMA12_Ejercicio5 {
                 System.out.println("2. Mostrar agenda");
                 System.out.println("3. Salir");
                 System.out.print("Elige una opcion: ");
-                
+
                 opcion = pedirInt("Que opcion desea?");
-                
+
                 switch (opcion) {
                     case 1 ->
-                    {
-                        try {
-                            anadirContacto();
-                        } catch (IOException ex) {
-                            Logger.getLogger(TEMA12_Ejercicio5.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    
+                        anadirContacto();
                     case 2 ->
                         mostrarAgenda();
                     case 3 ->
@@ -81,9 +74,7 @@ public class TEMA12_Ejercicio5 {
         }
 
         try (
-                FileWriter fw = new FileWriter("agenda.txt")
-                ) 
-        {
+                FileWriter fw = new FileWriter("agenda.txt")) {
             fw.write(nombre + " - " + edad + " años - " + telefono);
         }
 
