@@ -29,15 +29,19 @@ public class TEMA12_Ejercicio14 {
 
                 String[] datos = linea.split(" - ");
 
+                // asignar datos correctamente
+                String nombre = datos[0];
+                int edad = Integer.parseInt(datos[1]);
+                int suspensos = Integer.parseInt(datos[2]);
+                String residencia = datos[3];
+                double ingresos = Double.parseDouble(datos[4]);
+
                 double beca = calcularBeca(edad, suspensos, residencia, ingresos);
-                
 
                 if (beca > 0) {
                     System.out.printf("becario: %-25s | beca: %.2f €%n", nombre, beca);
                 }
             }
-
-            br.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("error: fichero no encontrado");

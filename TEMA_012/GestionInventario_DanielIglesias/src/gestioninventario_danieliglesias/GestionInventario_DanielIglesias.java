@@ -97,7 +97,7 @@ public class GestionInventario_DanielIglesias {
         PrintWriter pw = new PrintWriter(fw);
 
         for (Productos p : producto) {
-            pw.print(p.getNombre() + "#" + p.getCantidad() + "#" + p.getPrecio());
+            pw.println(p.getNombre() + "#" + p.getCantidad() + "#" + p.getPrecio());
         }
 
     }
@@ -135,18 +135,17 @@ public class GestionInventario_DanielIglesias {
     }
 
     //metodo para mostrar el inventario por producto cantidad y precio
-    /*   public static void mostrarInventario(List<Productos> producto) {
+    public static void mostrarInventario(List<Productos> producto) throws FileNotFoundException, IOException {
 
-       FileRead fr = new FileRead("inventario.txt");
-        BufferedRead br = new BufferedRead(fr);
+        FileReader fr = new FileReader("inventario.txt");
+        BufferedReader br = new BufferedReader(fr);
 
-        String linea = br.read();
-        String[] p = linea.split("#");
+        String linea;
 
-        for (linea = br.read(); linea != null;) {
+        while ((linea = br.readLine()) != null) {
+            String[] p = linea.split("#");
             System.out.println("Producto: " + p[0] + " Cantidad: " + p[1] + " Precio: " + p[2]);
-
         }
 
-    }*/
+    }
 }
