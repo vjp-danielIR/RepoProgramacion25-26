@@ -18,7 +18,7 @@ public class TEMA12_Ejercicio21 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         List<Asignatura> lista = new ArrayList<>();
         String[] nombresAsignaturas = {
             "Programación",
@@ -39,9 +39,7 @@ public class TEMA12_Ejercicio21 {
 
         try {
             calcularMedia(lista);
-        } catch (IOException ex) {
-            Logger.getLogger(TEMA12_Ejercicio21.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | IOException ex) {
             Logger.getLogger(TEMA12_Ejercicio21.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -80,15 +78,12 @@ public class TEMA12_Ejercicio21 {
 
     //metodo que lee el documento asignaturas.od y hace la media en base a las notas
     public static void calcularMedia(List<Asignatura> lista) throws FileNotFoundException, IOException, ClassNotFoundException {
-        
+
         try (
-                FileInputStream fis = new FileInputStream("asignaturas.ob"); 
-                ObjectInputStream ois = new ObjectInputStream(fis)
-                ) 
-        {
+                FileInputStream fis = new FileInputStream("asignaturas.ob"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             double suma = 0;
- 
+
             for (Asignatura a : lista) {
                 suma += a.getNota();
             }
