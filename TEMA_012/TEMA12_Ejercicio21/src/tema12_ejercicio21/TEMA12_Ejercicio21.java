@@ -19,8 +19,8 @@ public class TEMA12_Ejercicio21 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<Asignatura> lista = new ArrayList<>();
-        String[] nombresAsignaturas = {
+        List<Asignatura> lista = new ArrayList<>(); //lista de array de la clase asignaturas
+        String[] nombresAsignaturas = { //nombre de las asignaturas
             "Programación",
             "Bases de Datos",
             "Sistemas Informáticos",
@@ -28,9 +28,12 @@ public class TEMA12_Ejercicio21 {
             "Lenguajes de Marcas",
             "Formación y Orientación Laboral"
         };
-
-        crearAsignaturas(lista, nombresAsignaturas);
-
+        //constrol de excepciones
+        try {
+            crearAsignaturas(lista, nombresAsignaturas);
+        } catch (InputMismatchException e) {
+            System.out.println("valor no apto");
+        }
         try {
             guardarEnFichero(lista);
         } catch (IOException ex) {
@@ -47,23 +50,23 @@ public class TEMA12_Ejercicio21 {
     //metodo que crea una asignatura y la mete en el arryList
     public static void crearAsignaturas(List<Asignatura> lista, String[] nombreAsignaturas) {
 
+        boolean terminado = false;
         do {
-            try {
-                for (String nombreAsignatura : nombreAsignaturas) {
-                    double nota = pedirDouble("Dime la nota de: " + nombreAsignatura);
-                    if (nota > 10) {
-                        System.out.println("la nota solo puede ser entre 0 y 10");
-                    } else if (nota < 0) {
-                        System.out.println("la nota no puede ser negativa");
-                    } else {
-                        lista.add(new Asignatura(nombreAsignatura, nota));
-                    }
-                }
 
-            } catch (InputMismatchException e) {
-                System.out.println("valor no apto");
+            for (String nombreAsignatura : nombreAsignaturas) {
+                double nota = pedirDouble("Dime la nota de: " + nombreAsignatura);
+                //comprobacion de que la nota sea entre 0 y 10
+                if (nota > 10) {
+                    System.out.println("la nota solo puede ser entre 0 y 10");
+                } else if (nota < 0) {
+                    System.out.println("la nota no puede ser negativa");
+                } else {
+                    lista.add(new Asignatura(nombreAsignatura, nota));
+                    terminado = true;
+                }
             }
-        } while (pedirString("Desea seguir? s/n").equalsIgnoreCase("s"));
+
+        } while (!terminado);
     }
 
     //metodo que guarda los obojetos en un archivo 
@@ -79,6 +82,8 @@ public class TEMA12_Ejercicio21 {
     //metodo que lee el documento asignaturas.od y hace la media en base a las notas
     public static void calcularMedia(List<Asignatura> lista) throws FileNotFoundException, IOException, ClassNotFoundException {
 
+        System.out.println("");
+        System.out.println("Leyendo fichero");
         try (
                 FileInputStream fis = new FileInputStream("asignaturas.ob"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 

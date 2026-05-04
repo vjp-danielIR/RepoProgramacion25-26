@@ -4,13 +4,14 @@
  */
 package tema12_ejercicio21;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Daniel_Iglesias
  */
-public class Asignatura {
+public class Asignatura implements Serializable {
     //atributos
     private String nombre;
     private double nota;
